@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { Search } from "lucide-react";
+import { Search, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 import Container from "./Container";
 
@@ -10,7 +13,7 @@ const navItems = [
   },
   {
     label: "Categories",
-    href: "/category/web-development",
+    href: "/web-development",
   },
   {
     label: "Authors",
@@ -19,9 +22,11 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl">
-      <Container className="flex h-18 items-center justify-between">
+      <Container className="flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-lg font-bold text-white">
             G
@@ -47,10 +52,42 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <button className="rounded-xl border p-2 transition-colors hover:bg-muted">
-          <Search className="h-5 w-5" />
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-label="Toggle menu"
+            className="inline-flex items-center justify-center rounded-xl border p-2 md:hidden"
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+
+          <button className="rounded-xl border p-2 transition-colors hover:bg-muted">
+            <Search className="h-5 w-5" />
+          </button>
+        </div>
       </Container>
+
+      {open && (
+        <div className="md:hidden">
+          <div className="border-b bg-card">
+            <Container className="py-3">
+              <nav className="flex w-full flex-col gap-3">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </Container>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

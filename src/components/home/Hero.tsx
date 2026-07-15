@@ -35,8 +35,8 @@ export default function Hero() {
             transformation.
           </p>
 
-          <div className="mx-auto mt-12 flex max-w-2xl items-center rounded-2xl border bg-card px-5 py-4 shadow-soft">
-            <Search className="mr-3 h-5 w-5 text-muted-foreground" />
+          <div className="mx-auto mt-12 flex w-full max-w-2xl flex-col gap-3 rounded-2xl border bg-card p-4 shadow-soft sm:flex-row sm:items-center sm:px-5 sm:py-4">
+            <Search className="mr-3 h-5 w-5 flex-shrink-0 text-muted-foreground" />
 
             <input
               type="text"
@@ -44,7 +44,7 @@ export default function Hero() {
               className="flex-1 bg-transparent outline-none placeholder:text-muted-foreground"
             />
 
-            <button className="rounded-xl bg-primary px-5 py-2 text-sm font-medium text-white transition hover:opacity-90">
+            <button className="rounded-xl bg-primary px-5 py-2 text-sm font-medium text-white transition hover:opacity-90 sm:flex-shrink-0">
               Search
             </button>
           </div>
@@ -65,22 +65,22 @@ export default function Hero() {
             ))}
           </div>
 
-          <div className="mt-16 flex items-center justify-center gap-10">
-            <div>
+          <div className="mt-16 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-center sm:gap-10">
+            <div className="text-center">
               <p className="text-3xl font-bold text-primary">50+</p>
               <p className="text-sm text-muted-foreground">Articles</p>
             </div>
 
-            <div className="h-10 w-px bg-border" />
+            <div className="hidden h-10 w-px bg-border sm:block" />
 
-            <div>
+            <div className="text-center">
               <p className="text-3xl font-bold text-primary">8</p>
               <p className="text-sm text-muted-foreground">Categories</p>
             </div>
 
-            <div className="h-10 w-px bg-border" />
+            <div className="hidden h-10 w-px bg-border sm:block" />
 
-            <div>
+            <div className="text-center">
               <p className="text-3xl font-bold text-primary">10k+</p>
               <p className="text-sm text-muted-foreground">Monthly Readers</p>
             </div>

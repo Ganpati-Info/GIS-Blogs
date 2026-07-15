@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 import Footer from "@/components/layout/Footer";
@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   title: "Ganpati Info Solutions Blog",
   description:
     "Insights on AI, software development, cloud and digital transformation.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

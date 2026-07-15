@@ -11,7 +11,7 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
   return (
     <article className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <Link href={`/blog/${post.slug}`}>
+      <Link href={`/${post.category.slug}/${post.slug}`}>
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={post.coverImage}
@@ -24,7 +24,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       </Link>
 
       <div className="p-6">
-        <Link href={`/category/${post.category.slug}`}>
+        <Link href={`/${post.category.slug}`}>
           <span
             className="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white"
             style={{
@@ -35,7 +35,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           </span>
         </Link>
 
-        <Link href={`/blog/${post.slug}`}>
+        <Link href={`/${post.category.slug}/${post.slug}`}>
           <h3 className="mt-4 line-clamp-2 text-2xl font-bold transition-colors group-hover:text-primary">
             {post.title}
           </h3>
