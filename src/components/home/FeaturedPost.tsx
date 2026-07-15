@@ -11,7 +11,7 @@ interface FeaturedPostProps {
 export default function FeaturedPost({ post }: FeaturedPostProps) {
   return (
     <section className="rounded-lg border bg-card shadow-sm">
-      <div className="grid gap-10 p-8 lg:grid-cols-2 lg:p-10">
+      <div className="grid gap-6 p-6 sm:gap-8 sm:p-8 lg:grid-cols-2 lg:p-10">
         {/* Left */}
 
         <div className="flex flex-col justify-center">
@@ -20,7 +20,7 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
           </span>
 
           <Link href={`/blog/${post.slug}`} className="group">
-            <h1 className="text-4xl font-bold leading-tight transition-colors duration-200 hover-text lg:text-5xl">
+            <h1 className="text-2xl font-bold leading-tight transition-colors duration-200 hover-text sm:text-3xl lg:text-5xl">
               {post.title}
             </h1>
           </Link>

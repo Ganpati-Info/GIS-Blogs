@@ -56,10 +56,10 @@
 
   /* Brand */
 
-  --primary: oklch(0.47 0.18 260);
+  --primary: #25499f;
   --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: oklch(0.72 0.18 45);
+  --secondary: #f26722;
   --secondary-foreground: oklch(0.985 0 0);
 
   /* Base */

@@ -5,8 +5,8 @@ import Container from "./Container";
 export default function Footer() {
   return (
     <footer className="border-t bg-muted/40">
-      <Container className="py-16">
-        <div className="grid gap-12 md:grid-cols-4">
+      <Container className="py-8 sm:py-12 lg:py-16">
+        <div className="grid gap-8 sm:grid-cols-2 md:gap-12 md:grid-cols-4">
           <div>
             <h3 className="mb-4 text-lg font-bold">GIS Blog</h3>
 
@@ -82,13 +82,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-sm text-muted-foreground md:flex-row">
+        <div className="mt-8 flex flex-col gap-4 border-t pt-8 text-center text-sm text-muted-foreground md:mt-12 md:flex-row md:items-center md:justify-between md:gap-0">
           <p>
             © {new Date().getFullYear()} Ganpati Info Solutions. All rights
             reserved.
           </p>
 
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-6">
             <Link href="/privacy-policy">Privacy Policy</Link>
 
             <Link href="/terms">Terms</Link>
