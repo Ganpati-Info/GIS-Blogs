@@ -22,16 +22,16 @@ export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
 
   const articleCounts = useMemo(
-    () => getArticleCounts(homePageData.latestPosts),
+    () => getArticleCounts(homePageData.allPosts),
     [],
   );
 
   const filteredPosts = useMemo(() => {
     if (selectedCategory === "all") {
-      return homePageData.latestPosts;
+      return homePageData.allPosts;
     }
 
-    return homePageData.latestPosts.filter(
+    return homePageData.allPosts.filter(
       (post) => post.category.slug === selectedCategory,
     );
   }, [selectedCategory]);

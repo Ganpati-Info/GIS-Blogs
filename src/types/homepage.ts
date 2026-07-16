@@ -5,4 +5,5 @@ export interface HomePageData {
   latestPosts: Post[];
   popularPosts: Post[];
   categories: Category[];
+  allPosts: Post[];
 }
