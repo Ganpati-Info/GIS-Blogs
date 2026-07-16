@@ -13,7 +13,7 @@ export const homePageData: HomePageData = {
     )
     .slice(0, 6),
 
-  popularPosts: posts.filter((post) => post.popular).slice(0, 4),
+  popularPosts: posts.filter((post) => post.popular).slice(0, 5),
 
   categories,
 };
