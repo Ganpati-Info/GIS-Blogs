@@ -51,7 +51,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             alt={post.author.name}
             width={42}
             height={42}
-            className="rounded-full object-cover"
+            className="rounded-full object-center"
           />
 
           <div className="min-w-0">
