@@ -6,7 +6,7 @@ export const categories: Category[] = [
     name: "Artificial Intelligence",
     slug: "artificial-intelligence",
     description:
-      "AI, machine learning, LLMs, automation, and intelligent business solutions.",
+      "AI, machine learning, generative AI, LLMs, automation, and intelligent business solutions.",
     color: "#25499F",
     icon: "Bot",
   },
@@ -15,7 +15,7 @@ export const categories: Category[] = [
     name: "Web Development",
     slug: "web-development",
     description:
-      "Modern frontend and backend development using React, Next.js, Node.js, and more.",
+      "React, Next.js, Node.js, APIs, TypeScript, and modern web engineering.",
     color: "#2563EB",
     icon: "Code2",
   },
@@ -24,16 +24,16 @@ export const categories: Category[] = [
     name: "Mobile Development",
     slug: "mobile-development",
     description:
-      "Native and cross-platform mobile application development for Android and iOS.",
+      "Android, iOS, Flutter, React Native, and cross platform app development.",
     color: "#0EA5E9",
     icon: "Smartphone",
   },
   {
     id: "cat-4",
-    name: "Cloud Computing",
-    slug: "cloud-computing",
+    name: "Cloud & DevOps",
+    slug: "cloud-devops",
     description:
-      "AWS, Azure, cloud migration, infrastructure, scalability, and DevOps.",
+      "AWS, Azure, Docker, Kubernetes, CI/CD, cloud architecture, and infrastructure.",
     color: "#7C3AED",
     icon: "Cloud",
   },
@@ -42,7 +42,7 @@ export const categories: Category[] = [
     name: "UI / UX Design",
     slug: "ui-ux-design",
     description:
-      "User experience, interface design, accessibility, and design systems.",
+      "User experience, design systems, accessibility, prototyping, and product design.",
     color: "#EC4899",
     icon: "Palette",
   },
@@ -51,25 +51,25 @@ export const categories: Category[] = [
     name: "Cybersecurity",
     slug: "cybersecurity",
     description:
-      "Security best practices, authentication, encryption, and secure software development.",
+      "Application security, authentication, encryption, compliance, and secure development.",
     color: "#DC2626",
     icon: "ShieldCheck",
   },
   {
     id: "cat-7",
-    name: "Case Studies",
-    slug: "case-studies",
+    name: "Data & Analytics",
+    slug: "data-analytics",
     description:
-      "Real-world client success stories, implementations, and business transformations.",
+      "Business intelligence, analytics, dashboards, reporting, and data engineering.",
     color: "#16A34A",
-    icon: "Briefcase",
+    icon: "BarChart3",
   },
   {
     id: "cat-8",
     name: "Digital Transformation",
     slug: "digital-transformation",
     description:
-      "Helping businesses modernize operations through technology and automation.",
+      "Business modernization, automation, enterprise software, and digital strategy.",
     color: "#F26721",
     icon: "Sparkles",
   },
