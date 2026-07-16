@@ -23,18 +23,18 @@ export default function SearchInput({
         value={value}
         onValueChange={onValueChange}
         placeholder={placeholder}
-        className="pr-20 pl-4"
+        className="h-12 px-4 pr-20 text-sm sm:h-14 sm:text-base"
       />
 
-      <div className="absolute inset-y-0 right-4 flex items-center gap-2">
+      <div className="absolute inset-y-0 right-3 flex items-center gap-2 sm:right-4">
         {loading && <Loader2 className="h-4 w-4 animate-spin text-primary" />}
 
-        {value && (
+        {value.length > 0 && (
           <button
             type="button"
             onClick={() => onValueChange("")}
-            className="rounded-md p-1 text-muted-foreground transition hover:bg-muted hover:text-foreground"
             aria-label="Clear search"
+            className="flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             <X className="h-4 w-4" />
           </button>
