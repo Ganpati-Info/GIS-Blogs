@@ -37,7 +37,7 @@ export default function Breadcrumb({ post }: BreadcrumbProps) {
         <ChevronRight className="h-4 w-4 text-muted-foreground" />
 
         <li
-          className="max-w-xs truncate font-medium text-foreground sm:max-w-md"
+          className="hidden max-w-xs truncate font-medium text-foreground sm:block sm:max-w-md"
           aria-current="page"
         >
           {post.title}
