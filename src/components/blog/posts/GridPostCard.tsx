@@ -10,8 +10,8 @@ interface GridPostCardProps {
 
 export default function GridPostCard({ post }: GridPostCardProps) {
   return (
-    <article className="group overflow-hidden rounded-2xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <Link href={`/blog/${post.category.slug}/${post.slug}`}>
+    <article className="group overflow-hidden rounded-lg border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+      <Link href={`/${post.category.slug}/${post.slug}`}>
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={post.coverImage}
@@ -55,7 +55,7 @@ export default function GridPostCard({ post }: GridPostCardProps) {
           </span>
         </div>
 
-        <Link href={`/blog/${post.category.slug}/${post.slug}`}>
+        <Link href={`/${post.category.slug}/${post.slug}`}>
           <h2 className="line-clamp-2 text-lg font-bold transition-colors group-hover:text-primary sm:text-xl">
             {post.title}
           </h2>

@@ -10,10 +10,10 @@ interface ListPostCardProps {
 
 export default function ListPostCard({ post }: ListPostCardProps) {
   return (
-    <article className="group overflow-hidden rounded-2xl border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg">
+    <article className="group overflow-hidden rounded-lg border bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg">
       <div className="flex flex-col md:flex-row">
         <Link
-          href={`/blog/${post.category.slug}/${post.slug}`}
+          href={`/${post.category.slug}/${post.slug}`}
           className="relative block aspect-[16/10] w-full md:w-72 lg:w-80 md:flex-shrink-0"
         >
           <Image
@@ -52,7 +52,7 @@ export default function ListPostCard({ post }: ListPostCardProps) {
             </span>
           </div>
 
-          <Link href={`/blog/${post.category.slug}/${post.slug}`}>
+          <Link href={`/${post.category.slug}/${post.slug}`}>
             <h2 className="text-xl font-bold transition-colors group-hover:text-primary sm:text-2xl">
               {post.title}
             </h2>
@@ -81,7 +81,7 @@ export default function ListPostCard({ post }: ListPostCardProps) {
             </div>
 
             <Link
-              href={`/blog/${post.category.slug}/${post.slug}`}
+              href={`/${post.category.slug}/${post.slug}`}
               className="inline-flex items-center gap-2 font-medium text-primary transition-colors hover:text-primary/80"
             >
               Read Article

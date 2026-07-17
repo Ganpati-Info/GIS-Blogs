@@ -19,7 +19,7 @@ export default function PostsGrid({ posts }: PostsGridProps) {
 
         lg:grid-cols-3
 
-        2xl:grid-cols-4
+        
       "
     >
       {posts.map((post) => (

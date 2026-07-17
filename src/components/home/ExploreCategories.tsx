@@ -11,7 +11,7 @@ export default function ExploreCategories({
   articleCounts,
 }: ExploreCategoriesProps) {
   return (
-    <section className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
+    <section className="rounded-lg border bg-card p-5 shadow-sm sm:p-6">
       <div className="mb-6">
         <h2 className="text-lg font-bold sm:text-xl">Explore Categories</h2>
 
@@ -25,7 +25,7 @@ export default function ExploreCategories({
           <Link
             key={category.id}
             href={`/${category.slug}`}
-            className="group flex items-center justify-between rounded-xl px-4 py-3 transition-colors hover:bg-muted"
+            className="group flex items-center justify-between rounded-lg px-4 py-3 transition-colors hover:bg-muted"
           >
             <div className="flex min-w-0 items-center gap-3">
               <span

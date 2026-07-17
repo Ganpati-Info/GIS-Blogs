@@ -12,7 +12,7 @@ export default function LoadMore({ onClick, loading = false }: LoadMoreProps) {
         type="button"
         onClick={onClick}
         disabled={loading}
-        className="inline-flex items-center gap-2 rounded-xl border bg-background px-6 py-3 text-sm font-semibold transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground disabled:pointer-events-none disabled:opacity-50"
+        className="inline-flex items-center gap-2 rounded-lg border bg-background px-6 py-3 text-sm font-semibold transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground disabled:pointer-events-none disabled:opacity-50"
       >
         {loading ? (
           <>
