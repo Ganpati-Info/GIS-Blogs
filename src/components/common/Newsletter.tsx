@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 
 export default function Newsletter() {
   return (
-    <section className="rounded-2xl border bg-card px-6 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
+    <section className="rounded-lg border bg-card px-6 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
       <div className="mx-auto max-w-3xl text-center">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
           <Mail className="h-7 w-7 text-primary" />
@@ -22,12 +22,12 @@ export default function Newsletter() {
           <input
             type="email"
             placeholder="Enter your email"
-            className="h-12 flex-1 rounded-xl border bg-background px-4 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+            className="h-12 flex-1 rounded-lg border bg-background px-4 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
           />
 
           <button
             type="submit"
-            className="h-12 rounded-xl bg-primary px-8 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
+            className="h-12 rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground transition hover:bg-primary/90"
           >
             Subscribe
           </button>

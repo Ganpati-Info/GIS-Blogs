@@ -10,7 +10,7 @@ import BlogCard from "@/components/home/BlogCard";
 import CategoryTabs from "@/components/home/CategoryCard";
 import ExploreCategories from "@/components/home/ExploreCategories";
 import FeaturedPost from "@/components/home/FeaturedPost";
-import Newsletter from "@/components/home/Newsletter";
+import Newsletter from "@/components/common/Newsletter";
 import PopularPosts from "@/components/home/PopularPosts";
 
 import Container from "@/components/layout/Container";
@@ -45,7 +45,7 @@ export default function HomePage() {
 
   return (
     <main>
-      <Container className="py-6 sm:py-8 lg:py-10">
+      <Container className="py-6 sm:py-8 lg:py-10 max-w-7xl!">
         {/* Featured Post */}
         <FeaturedPost post={homePageData.featuredPost} />
 
@@ -87,13 +87,13 @@ export default function HomePage() {
           </div>
 
           {filteredPosts.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
-              {filteredPosts.slice(0, 4).map((post) => (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              {filteredPosts.slice(0, 3).map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}
             </div>
           ) : (
-            <div className="rounded-2xl border px-6 py-12 text-center sm:px-10 sm:py-16">
+            <div className="rounded-lg border px-6 py-12 text-center sm:px-10 sm:py-16">
               <h3 className="text-lg font-semibold sm:text-xl">
                 No articles found
               </h3>

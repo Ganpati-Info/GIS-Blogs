@@ -10,7 +10,7 @@ interface PopularPostsProps {
 
 export default function PopularPosts({ posts }: PopularPostsProps) {
   return (
-    <section className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
+    <section className="rounded-lg border bg-card p-5 shadow-sm sm:p-6">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-lg font-bold sm:text-xl">Popular Posts</h2>
 
@@ -30,7 +30,7 @@ export default function PopularPosts({ posts }: PopularPostsProps) {
             href={`/${post.category.slug}/${post.slug}`}
             className="group flex gap-4"
           >
-            <div className="h-20 w-28 flex-shrink-0 overflow-hidden rounded-xl">
+            <div className="h-20 w-28 flex-shrink-0 overflow-hidden rounded-lg">
               <Image
                 src={post.coverImage}
                 alt={post.title}

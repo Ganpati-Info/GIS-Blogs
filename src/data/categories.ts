@@ -6,7 +6,7 @@ export const categories: Category[] = [
     name: "Artificial Intelligence",
     slug: "artificial-intelligence",
     description:
-      "AI, machine learning, generative AI, LLMs, automation, and intelligent business solutions.",
+      "Latest news, tutorials, tools, machine learning, LLMs, generative AI, and practical AI applications.",
     color: "#25499F",
     icon: "Bot",
   },
@@ -15,7 +15,7 @@ export const categories: Category[] = [
     name: "Web Development",
     slug: "web-development",
     description:
-      "React, Next.js, Node.js, APIs, TypeScript, and modern web engineering.",
+      "React, Next.js, JavaScript, TypeScript, Node.js, APIs, performance, and frontend best practices.",
     color: "#2563EB",
     icon: "Code2",
   },
@@ -24,7 +24,7 @@ export const categories: Category[] = [
     name: "Mobile Development",
     slug: "mobile-development",
     description:
-      "Android, iOS, Flutter, React Native, and cross platform app development.",
+      "Android, iOS, Flutter, React Native, mobile UI, app architecture, and development tips.",
     color: "#0EA5E9",
     icon: "Smartphone",
   },
@@ -33,7 +33,7 @@ export const categories: Category[] = [
     name: "Cloud & DevOps",
     slug: "cloud-devops",
     description:
-      "AWS, Azure, Docker, Kubernetes, CI/CD, cloud architecture, and infrastructure.",
+      "AWS, Azure, Docker, Kubernetes, CI/CD, infrastructure, monitoring, and deployment guides.",
     color: "#7C3AED",
     icon: "Cloud",
   },
@@ -42,7 +42,7 @@ export const categories: Category[] = [
     name: "UI / UX Design",
     slug: "ui-ux-design",
     description:
-      "User experience, design systems, accessibility, prototyping, and product design.",
+      "Design systems, Figma, accessibility, user research, UX principles, and interface design.",
     color: "#EC4899",
     icon: "Palette",
   },
@@ -51,7 +51,7 @@ export const categories: Category[] = [
     name: "Cybersecurity",
     slug: "cybersecurity",
     description:
-      "Application security, authentication, encryption, compliance, and secure development.",
+      "Security best practices, ethical hacking, authentication, encryption, privacy, and threat analysis.",
     color: "#DC2626",
     icon: "ShieldCheck",
   },
@@ -60,7 +60,7 @@ export const categories: Category[] = [
     name: "Data & Analytics",
     slug: "data-analytics",
     description:
-      "Business intelligence, analytics, dashboards, reporting, and data engineering.",
+      "Data science, SQL, Python, visualization, analytics, business intelligence, and engineering.",
     color: "#16A34A",
     icon: "BarChart3",
   },
@@ -69,7 +69,7 @@ export const categories: Category[] = [
     name: "Digital Transformation",
     slug: "digital-transformation",
     description:
-      "Business modernization, automation, enterprise software, and digital strategy.",
+      "Technology trends, automation, enterprise innovation, digital strategy, and case studies.",
     color: "#F26721",
     icon: "Sparkles",
   },

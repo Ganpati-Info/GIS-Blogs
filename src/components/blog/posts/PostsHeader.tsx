@@ -1,4 +1,5 @@
-import { FileText } from "lucide-react";
+import { ArrowLeft, FileText} from "lucide-react";
+import Link from "next/link";
 
 interface PostsHeaderProps {
   total: number;
@@ -7,13 +8,23 @@ interface PostsHeaderProps {
 export default function PostsHeader({ total }: PostsHeaderProps) {
   return (
     <section className="space-y-4">
+      <div className = "flex items-center justify-between gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-primary"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Home
+              </Link>
+      </div>
       <div className="inline-flex items-center gap-2 rounded-full border bg-primary/5 px-4 py-2 text-sm font-medium text-primary">
         <FileText className="h-4 w-4" />
         All Articles
       </div>
 
+
       <div className="space-y-3">
-        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+        <h1 className="text-3xl font-bold tracking-tight lg:text-4xl 2xl:text-5xl">
           Explore Our Blog
         </h1>
 

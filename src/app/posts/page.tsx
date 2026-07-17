@@ -1,6 +1,5 @@
 "use client";
 
-import { useMemo, useState } from "react";
 
 import Container from "@/components/layout/Container";
 
@@ -67,7 +66,8 @@ const {
 
   return (
     <main>
-      <Container className="py-8 lg:py-10">
+      <Container className="py-8 lg:py-10 max-w-7xl!">
+
         <PostsHeader total={filteredPosts.length} />
 
         <div className="mt-8 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">

@@ -61,7 +61,7 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
       value={value}
       onValueChange={(value) => onChange(value as SortType)}
     >
-      <SelectTrigger className="w-full sm:w-56">
+      <SelectTrigger className="w-full sm:w-56 h-12! rounded-lg">
         <div className="flex items-center gap-2">
           <SelectedIcon className="h-4 w-4" />
           <span>{selected.label}</span>

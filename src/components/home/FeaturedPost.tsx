@@ -10,11 +10,11 @@ interface FeaturedPostProps {
 
 export default function FeaturedPost({ post }: FeaturedPostProps) {
   return (
-    <section className="rounded-2xl border bg-card shadow-sm">
+    <section className="rounded-lg border bg-card shadow-sm">
       <div className="grid gap-6 p-5 sm:gap-8 sm:p-8 lg:p-10 xl:grid-cols-2">
         {/* Image */}
-        <Link href={`/blog/${post.slug}`} className="group order-1 xl:order-2">
-          <div className="overflow-hidden rounded-xl">
+        <Link href={`/${post.category.slug}/${post.slug}`} className="group order-1 xl:order-2">
+          <div className="overflow-hidden rounded-lg">
             <Image
               src={post.coverImage}
               alt={post.title}
@@ -28,11 +28,11 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
 
         {/* Content */}
         <div className="order-2 flex flex-col justify-center xl:order-1">
-          <span className="mb-4 inline-flex w-fit rounded-xl bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+          <span className="mb-4 inline-flex w-fit rounded-lg bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
             Featured
           </span>
 
-          <Link href={`/blog/${post.slug}`} className="group">
+          <Link href={`/${post.category.slug}/${post.slug}`} className="group">
             <h1 className="text-2xl font-bold leading-tight transition-colors group-hover:text-primary sm:text-3xl xl:text-5xl">
               {post.title}
             </h1>
@@ -74,7 +74,7 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
           </div>
 
           <Link
-            href={`/blog/${post.slug}`}
+            href={`/${post.category.slug}/${post.slug}`}
             className="mt-8 inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 font-medium text-primary-foreground transition hover:bg-primary/90"
           >
             Read Article

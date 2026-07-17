@@ -18,7 +18,7 @@ export default function PostsSearch({ value, onChange }: PostsSearchProps) {
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Search articles..."
-          className="h-12 w-full rounded-xl border bg-background pl-12 pr-12 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-primary"
+          className="h-12 w-full rounded-lg border bg-background pl-12 pr-12 text-sm outline-none transition-all placeholder:text-muted-foreground focus:border-primary"
         />
 
         {value && (
@@ -36,7 +36,9 @@ export default function PostsSearch({ value, onChange }: PostsSearchProps) {
       {value && (
         <p className="mt-2 text-sm text-muted-foreground">
           Searching for{" "}
-          <span className="font-semibold text-foreground">&quot;{value}&quot;</span>
+          <span className="font-semibold text-foreground">
+            &quot;{value}&quot;
+          </span>
         </p>
       )}
     </div>
