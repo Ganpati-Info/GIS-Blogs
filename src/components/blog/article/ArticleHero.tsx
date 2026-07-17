@@ -37,7 +37,7 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
       </p>
 
       {/* Meta */}
-      <div className="mt-10 flex flex-col gap-6 border-y py-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-10 flex flex-col gap-6 border-y py-2 sm:flex-row sm:items-center sm:justify-between">
         {/* Author */}
         <div className="flex items-center gap-4">
           <Image
@@ -45,16 +45,25 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
             alt={post.author.name}
             width={56}
             height={56}
-            className="rounded-full object-cover"
+            className="rounded-full object-center"
           />
 
-          <div>
-            <p className="font-semibold text-foreground">{post.author.name}</p>
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/author/${post.author.slug}`}
+              className="font-semibold text-foreground transition-colors hover:text-primary"
+            >
+              {post.author.name}
+            </Link>
 
             {post.author.designation && (
-              <p className="text-sm text-muted-foreground">
-                {post.author.designation}
-              </p>
+              <>
+                <span className="text-muted-foreground">•</span>
+
+                <span className="text-sm text-muted-foreground">
+                  {post.author.designation}
+                </span>
+              </>
             )}
           </div>
         </div>

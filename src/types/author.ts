@@ -11,10 +11,18 @@ export interface Author {
 
   bio: string;
 
+  email?: string;
+
+  location?: string;
+
+  joinedAt?: string;
+
   social: {
     linkedin?: string;
     twitter?: string;
     github?: string;
     website?: string;
+    medium?: string;
+    devto?: string;
   };
 }
