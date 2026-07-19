@@ -491,6 +491,7 @@ A design system reduces duplication while improving development speed and user e
 
     popular: false,
   },
+
   {
     id: "post-7",
 
@@ -723,6 +724,7 @@ Mastering TypeScript makes large React applications easier to scale and maintain
 
     popular: true,
   },
+  
   {
     id: "post-10",
 
