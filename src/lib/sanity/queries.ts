@@ -1,0 +1,246 @@
+import { groq } from "next-sanity";
+
+export const POSTS_QUERY = groq`
+  *[_type == "post"] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    excerpt,
+    featured,
+    publishedAt,
+    updatedAt,
+    seoTitle,
+    seoDescription,
+    tags,
+
+    coverImage{
+      asset->{
+        _id,
+        url,
+        metadata{
+          dimensions
+        }
+      },
+      alt
+    },
+
+    author->{
+      _id,
+      name,
+      slug,
+      image{
+        asset->{
+          url
+        }
+      }
+    },
+
+    categories[]->{
+      _id,
+      title,
+      slug,
+      description,
+      color,
+      icon
+    }
+  }
+`;
+export const POST_QUERY = groq`
+  *[
+    _type == "post"
+    && slug.current == $postSlug
+    && $categorySlug in categories[]->slug.current
+  ][0]{
+    _id,
+    title,
+    slug,
+    excerpt,
+    body,
+    featured,
+    publishedAt,
+    updatedAt,
+    seoTitle,
+    seoDescription,
+    tags,
+
+    coverImage{
+      asset->{
+        _id,
+        url,
+        metadata{
+          dimensions
+        }
+      },
+      alt
+    },
+
+    author->{
+      _id,
+      name,
+      slug,
+      designation,
+      bio,
+      image{
+        asset->{
+          url
+        }
+      },
+      social
+    },
+
+    categories[]->{
+      _id,
+      title,
+      slug,
+      description,
+      color,
+      icon
+    }
+  }
+`;
+export const CATEGORY_QUERY = groq`
+  *[
+    _type == "category"
+    && slug.current == $slug
+  ][0]{
+    _id,
+    title,
+    slug,
+    description,
+    icon,
+
+    color{
+      hex
+    },
+
+    image{
+      asset->{
+        url
+      },
+      alt
+    },
+
+    featured,
+    order,
+
+    "posts": *[
+      _type == "post"
+      && references(^._id)
+    ] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      excerpt,
+      featured,
+      publishedAt,
+
+      coverImage{
+        asset->{
+          url
+        },
+        alt
+      },
+
+      author->{
+        name,
+        slug
+      }
+    }
+  }
+`;
+export const CATEGORIES_QUERY = groq`
+  *[_type == "category"] | order(title asc) {
+    _id,
+    title,
+    slug,
+    description,
+    icon,
+
+    color{
+      hex
+    },
+
+    image{
+      asset->{
+        url
+      },
+      alt
+    },
+
+    featured,
+    order
+  }
+`;
+export const AUTHORS_QUERY = groq`
+  *[_type == "author"] | order(name asc) {
+    _id,
+    name,
+    slug,
+    designation,
+    bio,
+
+    image{
+      asset->{
+        _id,
+        url,
+        metadata{
+          dimensions
+        }
+      },
+      alt
+    },
+
+    social
+  }
+`;
+export const AUTHOR_QUERY = groq`
+  *[
+    _type == "author"
+    && slug.current == $slug
+  ][0]{
+    _id,
+    name,
+    slug,
+    designation,
+    bio,
+
+    image{
+      asset->{
+        _id,
+        url,
+        metadata{
+          dimensions
+        }
+      },
+      alt
+    },
+
+    social,
+
+    "posts": *[
+      _type == "post"
+      && author._ref == ^._id
+    ] | order(publishedAt desc) {
+      _id,
+      title,
+      slug,
+      excerpt,
+      featured,
+      publishedAt,
+
+      coverImage{
+        asset->{
+          url
+        },
+        alt
+      },
+
+      categories[]->{
+        title,
+        slug,
+        color,
+        icon
+      }
+    }
+  }
+`;
