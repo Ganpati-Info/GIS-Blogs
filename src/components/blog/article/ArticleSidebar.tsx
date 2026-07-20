@@ -1,11 +1,8 @@
 "use client";
 
-import { Clock, CalendarDays } from "lucide-react";
-import { formatDate } from "@/lib/date";
-
 import { Post } from "@/types";
 
-import ArticleTOC from "./ArticleTOC";
+// import ArticleTOC from "./ArticleTOC";
 import ShareButtons from "./ShareButtons";
 
 interface ArticleSidebarProps {
@@ -16,7 +13,7 @@ export default function ArticleSidebar({ post }: ArticleSidebarProps) {
   return (
     <div className="space-y-8 lg:sticky lg:top-24">
 
-      <ArticleTOC content={post.content} />
+      {/* <ArticleTOC content={post.content} /> */}
 
       <ShareButtons post={post} />
     </div>

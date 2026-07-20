@@ -27,12 +27,12 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
       </Link>
 
       {/* Title */}
-      <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl 2xl:text-7xl">
+      <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl xl:text-6xl text-center justify-center mx-auto">
         {post.title}
       </h1>
 
       {/* Excerpt */}
-      <p className="mt-8 max-w-3xl text-xl leading-9 text-muted-foreground">
+      <p className="mt-8 max-w-3xl text-xl leading-9 text-muted-foreground justify-center mx-auto text-center">
         {post.excerpt}
       </p>
 

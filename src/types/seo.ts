@@ -4,6 +4,4 @@ export interface SEO {
   description: string;
 
   keywords: string[];
-
-  image: string;
 }

@@ -11,6 +11,7 @@
   "dependencies": {
     "@base-ui/react": "^1.6.0",
     "@portabletext/react": "^6.2.0",
+    "@portabletext/types": "^4.0.2",
     "@sanity/image-url": "^2.1.1",
     "@tailwindcss/typography": "^0.5.20",
     "class-variance-authority": "^0.7.1",
@@ -26,6 +27,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-icons": "^5.7.0",
+    "react-syntax-highlighter": "^16.1.1",
     "react-use-draggable-scroll": "^0.4.7",
     "reading-time": "^1.5.0",
     "shadcn": "^4.13.0",
@@ -37,6 +39,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "tailwindcss": "^4",

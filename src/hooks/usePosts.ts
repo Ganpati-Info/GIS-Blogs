@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Post } from "@/types";
 
@@ -32,17 +32,16 @@ export function usePosts({ posts, initialVisible = 8 }: UsePostsProps) {
     }
 
     if (query.trim()) {
-      const keyword = query.toLowerCase();
+      const keyword = query.trim().toLowerCase();
 
-      data = data.filter((post) => {
-        return (
+      data = data.filter(
+        (post) =>
           post.title.toLowerCase().includes(keyword) ||
           post.excerpt.toLowerCase().includes(keyword) ||
           post.category.name.toLowerCase().includes(keyword) ||
           post.author.name.toLowerCase().includes(keyword) ||
-          post.tags.some((tag) => tag.toLowerCase().includes(keyword))
-        );
-      });
+          post.tags.some((tag) => tag.toLowerCase().includes(keyword)),
+      );
     }
 
     switch (sort) {
@@ -66,6 +65,7 @@ export function usePosts({ posts, initialVisible = 8 }: UsePostsProps) {
         data.sort((a, b) => a.readingTime - b.readingTime);
         break;
 
+      case "newest":
       default:
         data.sort(
           (a, b) =>
@@ -76,6 +76,7 @@ export function usePosts({ posts, initialVisible = 8 }: UsePostsProps) {
 
     return data;
   }, [posts, query, selectedCategory, sort]);
+
 
   return {
     query,

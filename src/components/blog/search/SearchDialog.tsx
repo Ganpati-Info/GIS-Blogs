@@ -5,17 +5,21 @@ import { Search } from "lucide-react";
 
 import { Command, CommandDialog, CommandList } from "@/components/ui/command";
 
-import { homePageData } from "@/data";
 import { useSearch } from "@/hooks/useSearch";
+import { Post } from "@/types";
 
 import SearchInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 
-export default function SearchDialog() {
+interface SearchDialogProps {
+  posts: Post[];
+}
+
+export default function SearchDialog({ posts }: SearchDialogProps) {
   const [open, setOpen] = useState(false);
 
   const { query, setQuery, results, totalResults, isSearching } = useSearch({
-    posts: homePageData.latestPosts,
+    posts,
   });
 
   useEffect(() => {

@@ -194,9 +194,9 @@
     @apply leading-8 text-muted-foreground;
   }
 
-  code {
-    @apply rounded-md bg-muted px-1.5 py-1 text-sm;
-  }
+  :not(pre) > code {
+  @apply rounded-md bg-muted px-1.5 py-1 text-sm;
+}
 }
 
 /* ==========================================================

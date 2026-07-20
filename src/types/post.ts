@@ -1,6 +1,8 @@
 import { Author } from "./author";
 import { Category } from "./category";
 import { SEO } from "./seo";
+import { PortableTextBlock } from "@portabletext/types";
+
 
 export interface Post {
   id: string;
@@ -11,7 +13,7 @@ export interface Post {
 
   excerpt: string;
 
-  content: string;
+  content: PortableTextBlock[];
 
   coverImage: string;
 
