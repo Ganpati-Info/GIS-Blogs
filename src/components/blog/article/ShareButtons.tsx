@@ -53,12 +53,12 @@ export default function ShareButtons({ post }: ShareButtonsProps) {
   };
 
   return (
-    <section className="space-y-4">
+    <section className="space-y-4 justify-center text-center">
       <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
         Share this article
       </h3>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 justify-center">
         <Button
           size="icon"
           variant="outline"

@@ -1,13 +1,4 @@
-"use client";
-
-import { notFound, useParams } from "next/navigation";
-
-import {
-  getNextPost,
-  getPost,
-  getPreviousPost,
-  getRelatedPosts,
-} from "@/lib/blog/articles";
+import { notFound } from "next/navigation";
 
 import Container from "@/components/layout/Container";
 
@@ -17,43 +8,43 @@ import {
   ArticleSidebar,
   AuthorCard,
   BreadCrumb,
-  PreviousNextPost,
   ReadingProgress,
   RelatedPosts,
 } from "@/components/blog/article";
 
-export default function BlogPostPage() {
-  const params = useParams();
+import { getPost, getRelatedPosts } from "@/services/post.service";
 
-  const categorySlug = params.categorySlug as string;
-  const postSlug = params.postSlug as string;
+interface BlogPostPageProps {
+  params: Promise<{
+    categorySlug: string;
+    postSlug: string;
+  }>;
+}
 
-  const post = getPost(categorySlug, postSlug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { categorySlug, postSlug } = await params;
+
+  const post = await getPost(categorySlug, postSlug);
 
   if (!post) {
     notFound();
   }
 
-  const relatedPosts = getRelatedPosts(post);
-  // const previousPost = getPreviousPost(post);
-  // const nextPost = getNextPost(post);
+  const relatedPosts = await getRelatedPosts(post);
 
   return (
     <>
       <ReadingProgress />
 
       <main className="pb-24">
-        {/* Hero */}
         <Container className="max-w-7xl py-10 lg:py-14">
           <BreadCrumb post={post} />
 
           <ArticleHero post={post} />
         </Container>
 
-        {/* Reading Experience */}
         <Container className="max-w-7xl">
-          <div className="">
-            {/* Move this later to floating left/right if desired */}
+          <div>
             <div className="mb-10">
               <ArticleSidebar post={post} />
             </div>
@@ -61,16 +52,11 @@ export default function BlogPostPage() {
             <ArticleContent post={post} />
 
             <AuthorCard author={post.author} />
-
-            {/* <PreviousNextPost previous={previousPost} next={nextPost} /> */}
           </div>
         </Container>
 
-        {/* Related Articles */}
         <Container className="max-w-7xl">
           <RelatedPosts posts={relatedPosts} />
-
-          {/* <Newsletter /> */}
         </Container>
       </main>
     </>

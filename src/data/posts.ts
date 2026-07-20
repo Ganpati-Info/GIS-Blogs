@@ -1,1116 +1,1116 @@
-import { Post } from "@/types";
+// import { Post } from "@/types";
 
-import { authors } from "./authors";
-import { categories } from "./categories";
+// import { authors } from "./authors";
+// import { categories } from "./categories";
 
-export const posts: Post[] = [
-  {
-    id: "post-1",
+// export const posts: Post[] = [
+//   {
+//     id: "post-1",
 
-    title: "How Artificial Intelligence Is Transforming Modern Businesses",
+//     title: "How Artificial Intelligence Is Transforming Modern Businesses",
 
-    slug: "how-artificial-intelligence-is-transforming-modern-businesses",
+//     slug: "how-artificial-intelligence-is-transforming-modern-businesses",
 
-    excerpt:
-      "Explore how businesses are leveraging artificial intelligence to automate operations, improve customer experiences, and make data-driven decisions.",
+//     excerpt:
+//       "Explore how businesses are leveraging artificial intelligence to automate operations, improve customer experiences, and make data-driven decisions.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Artificial Intelligence has become one of the fastest growing technologies in modern business. Organizations across industries are adopting AI to improve efficiency, reduce operational costs, and deliver better customer experiences.
+// Artificial Intelligence has become one of the fastest growing technologies in modern business. Organizations across industries are adopting AI to improve efficiency, reduce operational costs, and deliver better customer experiences.
 
-## Why AI Matters
+// ## Why AI Matters
 
-AI enables businesses to process massive amounts of data, automate repetitive tasks, and uncover insights that were previously impossible to identify manually.
+// AI enables businesses to process massive amounts of data, automate repetitive tasks, and uncover insights that were previously impossible to identify manually.
 
-Companies are using AI for:
+// Companies are using AI for:
 
-- Customer support chatbots
-- Predictive analytics
-- Fraud detection
-- Process automation
-- Recommendation systems
+// - Customer support chatbots
+// - Predictive analytics
+// - Fraud detection
+// - Process automation
+// - Recommendation systems
 
-## Benefits
+// ## Benefits
 
-Businesses adopting AI often experience:
+// Businesses adopting AI often experience:
 
-- Faster decision making
-- Lower operational costs
-- Better customer engagement
-- Increased productivity
-- Improved scalability
+// - Faster decision making
+// - Lower operational costs
+// - Better customer engagement
+// - Increased productivity
+// - Improved scalability
 
-## Challenges
+// ## Challenges
 
-Despite its benefits, AI implementation requires careful planning.
+// Despite its benefits, AI implementation requires careful planning.
 
-Organizations should focus on:
+// Organizations should focus on:
 
-- Data quality
-- Security
-- Privacy
-- Ethical AI
-- Continuous monitoring
+// - Data quality
+// - Security
+// - Privacy
+// - Ethical AI
+// - Continuous monitoring
 
-## Final Thoughts
+// ## Final Thoughts
 
-Artificial Intelligence is no longer a future technology. Businesses that embrace AI today position themselves for long-term growth and competitive advantage.
-`,
+// Artificial Intelligence is no longer a future technology. Businesses that embrace AI today position themselves for long-term growth and competitive advantage.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&q=80",
 
-    category: categories[0],
+//     category: categories[0],
 
-    author: authors[1],
+//     author: authors[1],
 
-    tags: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Business",
-      "Automation",
-      "Technology",
-    ],
+//     tags: [
+//       "Artificial Intelligence",
+//       "Machine Learning",
+//       "Business",
+//       "Automation",
+//       "Technology",
+//     ],
 
-    seo: {
-      title: "How Artificial Intelligence Is Transforming Modern Businesses",
+//     seo: {
+//       title: "How Artificial Intelligence Is Transforming Modern Businesses",
 
-      description:
-        "Discover how AI is helping businesses automate workflows, improve customer experience, and increase productivity.",
+//       description:
+//         "Discover how AI is helping businesses automate workflows, improve customer experience, and increase productivity.",
 
-      keywords: [
-        "AI",
-        "Artificial Intelligence",
-        "Business",
-        "Automation",
-        "Machine Learning",
-      ],
+//       keywords: [
+//         "AI",
+//         "Artificial Intelligence",
+//         "Business",
+//         "Automation",
+//         "Machine Learning",
+//       ],
 
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-07-10",
+//     publishedAt: "2026-07-10",
 
-    updatedAt: "2026-07-12",
+//     updatedAt: "2026-07-12",
 
-    readingTime: 7,
+//     readingTime: 7,
 
-    featured: true,
+//     featured: true,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-2",
+//   {
+//     id: "post-2",
 
-    title: "Next.js 15 Best Practices for Enterprise Applications",
+//     title: "Next.js 15 Best Practices for Enterprise Applications",
 
-    slug: "nextjs-15-best-practices-enterprise-applications",
+//     slug: "nextjs-15-best-practices-enterprise-applications",
 
-    excerpt:
-      "Learn the architecture, rendering strategies, caching techniques, and optimization methods used to build enterprise-grade Next.js applications.",
+//     excerpt:
+//       "Learn the architecture, rendering strategies, caching techniques, and optimization methods used to build enterprise-grade Next.js applications.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Next.js has become one of the most popular frameworks for building production-ready React applications.
+// Next.js has become one of the most popular frameworks for building production-ready React applications.
 
-## Server Components
+// ## Server Components
 
-Server Components reduce JavaScript sent to the browser while improving performance.
+// Server Components reduce JavaScript sent to the browser while improving performance.
 
-## Data Fetching
+// ## Data Fetching
 
-Use Server Components whenever possible.
+// Use Server Components whenever possible.
 
-Cache expensive requests.
+// Cache expensive requests.
 
-Use streaming for slow data.
+// Use streaming for slow data.
 
-## Performance
+// ## Performance
 
-Focus on:
+// Focus on:
 
-- Image optimization
-- Dynamic imports
-- Route prefetching
-- Metadata generation
-- Partial rendering
+// - Image optimization
+// - Dynamic imports
+// - Route prefetching
+// - Metadata generation
+// - Partial rendering
 
-## Deployment
+// ## Deployment
 
-Deploy using modern edge platforms with caching enabled.
+// Deploy using modern edge platforms with caching enabled.
 
-## Conclusion
+// ## Conclusion
 
-Following these practices results in scalable and maintainable enterprise applications.
-`,
+// Following these practices results in scalable and maintainable enterprise applications.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
 
-    category: categories[1],
+//     category: categories[1],
 
-    author: authors[0],
+//     author: authors[0],
 
-    tags: ["Next.js", "React", "TypeScript", "Performance", "Frontend"],
+//     tags: ["Next.js", "React", "TypeScript", "Performance", "Frontend"],
 
-    seo: {
-      title: "Next.js 15 Best Practices for Enterprise Applications",
+//     seo: {
+//       title: "Next.js 15 Best Practices for Enterprise Applications",
 
-      description:
-        "Learn how to build scalable enterprise applications using Next.js 15.",
+//       description:
+//         "Learn how to build scalable enterprise applications using Next.js 15.",
 
-      keywords: ["Next.js", "React", "Frontend", "Enterprise"],
+//       keywords: ["Next.js", "React", "Frontend", "Enterprise"],
 
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-07-07",
+//     publishedAt: "2026-07-07",
 
-    readingTime: 8,
+//     readingTime: 8,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-3",
+//   {
+//     id: "post-3",
 
-    title: "Building High Performance React Applications",
+//     title: "Building High Performance React Applications",
 
-    slug: "building-high-performance-react-applications",
+//     slug: "building-high-performance-react-applications",
 
-    excerpt:
-      "Discover practical React optimization techniques including memoization, lazy loading, virtualization, and efficient state management.",
+//     excerpt:
+//       "Discover practical React optimization techniques including memoization, lazy loading, virtualization, and efficient state management.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Performance plays a critical role in user experience.
+// Performance plays a critical role in user experience.
 
-A slow interface results in lower engagement and reduced conversions.
+// A slow interface results in lower engagement and reduced conversions.
 
-## Common Bottlenecks
+// ## Common Bottlenecks
 
-- Large bundle sizes
-- Unnecessary renders
-- Heavy components
-- Poor state management
+// - Large bundle sizes
+// - Unnecessary renders
+// - Heavy components
+// - Poor state management
 
-## Optimization Techniques
+// ## Optimization Techniques
 
-Improve performance by using:
+// Improve performance by using:
 
-- React.memo
-- useMemo
-- useCallback
-- Lazy loading
-- Code splitting
-- Image optimization
-- Virtualized lists
+// - React.memo
+// - useMemo
+// - useCallback
+// - Lazy loading
+// - Code splitting
+// - Image optimization
+// - Virtualized lists
 
-## Monitoring
+// ## Monitoring
 
-Always measure before optimizing.
+// Always measure before optimizing.
 
-Use:
+// Use:
 
-- React DevTools
-- Lighthouse
-- Chrome Performance
-- Web Vitals
+// - React DevTools
+// - Lighthouse
+// - Chrome Performance
+// - Web Vitals
 
-## Conclusion
+// ## Conclusion
 
-Small improvements across many components produce significant performance gains.
-`,
+// Small improvements across many components produce significant performance gains.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
 
-    category: categories[1],
+//     category: categories[1],
 
-    author: authors[0],
+//     author: authors[0],
 
-    tags: ["React", "Performance", "JavaScript", "Frontend", "Optimization"],
+//     tags: ["React", "Performance", "JavaScript", "Frontend", "Optimization"],
 
-    seo: {
-      title: "Building High Performance React Applications",
+//     seo: {
+//       title: "Building High Performance React Applications",
 
-      description:
-        "Learn practical techniques to optimize React applications for speed and scalability.",
+//       description:
+//         "Learn practical techniques to optimize React applications for speed and scalability.",
 
-      keywords: ["React", "Performance", "Optimization", "Frontend"],
+//       keywords: ["React", "Performance", "Optimization", "Frontend"],
 
-      image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-07-04",
+//     publishedAt: "2026-07-04",
 
-    readingTime: 6,
+//     readingTime: 6,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
-  {
-    id: "post-4",
+//     popular: true,
+//   },
+//   {
+//     id: "post-4",
 
-    title: "Building Secure REST APIs with Node.js",
+//     title: "Building Secure REST APIs with Node.js",
 
-    slug: "building-secure-rest-apis-with-nodejs",
+//     slug: "building-secure-rest-apis-with-nodejs",
 
-    excerpt:
-      "Learn security best practices for building production-ready REST APIs using Node.js, Express, JWT authentication, and proper validation.",
+//     excerpt:
+//       "Learn security best practices for building production-ready REST APIs using Node.js, Express, JWT authentication, and proper validation.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Security should never be treated as an afterthought.
+// Security should never be treated as an afterthought.
 
-Modern APIs process sensitive user information, authentication tokens and business-critical data.
+// Modern APIs process sensitive user information, authentication tokens and business-critical data.
 
-## Authentication
+// ## Authentication
 
-Use JWT or session-based authentication depending on your application's requirements.
+// Use JWT or session-based authentication depending on your application's requirements.
 
-Never store passwords directly.
+// Never store passwords directly.
 
-Always hash passwords using bcrypt or Argon2.
+// Always hash passwords using bcrypt or Argon2.
 
-## Validation
+// ## Validation
 
-Every incoming request should be validated.
+// Every incoming request should be validated.
 
-Use libraries like Zod or Joi to validate:
+// Use libraries like Zod or Joi to validate:
 
-- Request body
-- Query parameters
-- Route parameters
+// - Request body
+// - Query parameters
+// - Route parameters
 
-## Authorization
+// ## Authorization
 
-Authentication identifies the user.
+// Authentication identifies the user.
 
-Authorization determines what they are allowed to do.
+// Authorization determines what they are allowed to do.
 
-Never rely only on frontend checks.
+// Never rely only on frontend checks.
 
-## Final Thoughts
+// ## Final Thoughts
 
-Building secure APIs requires continuous monitoring, testing and regular dependency updates.
-`,
+// Building secure APIs requires continuous monitoring, testing and regular dependency updates.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80",
 
-    category: categories[5],
+//     category: categories[5],
 
-    author: authors[2],
+//     author: authors[2],
 
-    tags: ["Node.js", "Express", "API", "Security", "JWT"],
+//     tags: ["Node.js", "Express", "API", "Security", "JWT"],
 
-    seo: {
-      title: "Building Secure REST APIs with Node.js",
+//     seo: {
+//       title: "Building Secure REST APIs with Node.js",
 
-      description:
-        "Learn production-ready API security practices using Node.js and Express.",
+//       description:
+//         "Learn production-ready API security practices using Node.js and Express.",
 
-      keywords: ["Node.js", "REST API", "Express", "Security", "JWT"],
+//       keywords: ["Node.js", "REST API", "Express", "Security", "JWT"],
 
-      image:
-        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-07-02",
+//     publishedAt: "2026-07-02",
 
-    readingTime: 8,
+//     readingTime: 8,
 
-    featured: false,
+//     featured: false,
 
-    popular: false,
-  },
+//     popular: false,
+//   },
 
-  {
-    id: "post-5",
+//   {
+//     id: "post-5",
 
-    title: "Cloud Migration Checklist for Modern Enterprises",
+//     title: "Cloud Migration Checklist for Modern Enterprises",
 
-    slug: "cloud-migration-checklist-modern-enterprises",
+//     slug: "cloud-migration-checklist-modern-enterprises",
 
-    excerpt:
-      "A practical guide to planning, executing and optimizing enterprise cloud migration projects with minimal downtime.",
+//     excerpt:
+//       "A practical guide to planning, executing and optimizing enterprise cloud migration projects with minimal downtime.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Moving infrastructure to the cloud is more than copying servers.
+// Moving infrastructure to the cloud is more than copying servers.
 
-Successful migrations require planning.
+// Successful migrations require planning.
 
-## Assessment
+// ## Assessment
 
-Review:
+// Review:
 
-- Existing infrastructure
-- Databases
-- Applications
-- Dependencies
+// - Existing infrastructure
+// - Databases
+// - Applications
+// - Dependencies
 
-## Migration Strategy
+// ## Migration Strategy
 
-Choose the right strategy.
+// Choose the right strategy.
 
-- Rehost
-- Refactor
-- Rebuild
-- Replace
+// - Rehost
+// - Refactor
+// - Rebuild
+// - Replace
 
-## Cost Optimization
+// ## Cost Optimization
 
-Monitor cloud usage continuously.
+// Monitor cloud usage continuously.
 
-Implement autoscaling.
+// Implement autoscaling.
 
-Use managed services whenever possible.
+// Use managed services whenever possible.
 
-## Conclusion
+// ## Conclusion
 
-Cloud migration should improve scalability, reliability and operational efficiency.
-`,
+// Cloud migration should improve scalability, reliability and operational efficiency.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
 
-    category: categories[3],
+//     category: categories[3],
 
-    author: authors[2],
+//     author: authors[2],
 
-    tags: ["AWS", "Azure", "Cloud", "DevOps", "Migration"],
+//     tags: ["AWS", "Azure", "Cloud", "DevOps", "Migration"],
 
-    seo: {
-      title: "Cloud Migration Checklist",
+//     seo: {
+//       title: "Cloud Migration Checklist",
 
-      description:
-        "Learn how enterprises migrate applications to the cloud successfully.",
+//       description:
+//         "Learn how enterprises migrate applications to the cloud successfully.",
 
-      keywords: ["Cloud", "AWS", "Azure", "Migration"],
+//       keywords: ["Cloud", "AWS", "Azure", "Migration"],
 
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-28",
+//     publishedAt: "2026-06-28",
 
-    readingTime: 9,
+//     readingTime: 9,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-6",
+//   {
+//     id: "post-6",
 
-    title: "Designing Scalable Design Systems for Growing Products",
+//     title: "Designing Scalable Design Systems for Growing Products",
 
-    slug: "designing-scalable-design-systems",
+//     slug: "designing-scalable-design-systems",
 
-    excerpt:
-      "Learn how reusable UI components, design tokens and accessibility improve consistency across modern digital products.",
+//     excerpt:
+//       "Learn how reusable UI components, design tokens and accessibility improve consistency across modern digital products.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Design systems help teams build consistent user experiences.
+// Design systems help teams build consistent user experiences.
 
-They improve collaboration between designers and developers.
+// They improve collaboration between designers and developers.
 
-## Core Principles
+// ## Core Principles
 
-Every design system should include:
+// Every design system should include:
 
-- Typography
-- Colors
-- Spacing
-- Components
-- Accessibility
+// - Typography
+// - Colors
+// - Spacing
+// - Components
+// - Accessibility
 
-## Component Library
+// ## Component Library
 
-Build reusable components.
+// Build reusable components.
 
-Examples include:
+// Examples include:
 
-- Buttons
-- Inputs
-- Cards
-- Dialogs
-- Tables
+// - Buttons
+// - Inputs
+// - Cards
+// - Dialogs
+// - Tables
 
-## Documentation
+// ## Documentation
 
-Good documentation is just as important as the components themselves.
+// Good documentation is just as important as the components themselves.
 
-## Conclusion
+// ## Conclusion
 
-A design system reduces duplication while improving development speed and user experience.
-`,
+// A design system reduces duplication while improving development speed and user experience.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
 
-    category: categories[4],
+//     category: categories[4],
 
-    author: authors[3],
+//     author: authors[3],
 
-    tags: ["UI", "UX", "Design System", "Accessibility", "Figma"],
+//     tags: ["UI", "UX", "Design System", "Accessibility", "Figma"],
 
-    seo: {
-      title: "Designing Scalable Design Systems",
+//     seo: {
+//       title: "Designing Scalable Design Systems",
 
-      description: "Build reusable design systems for modern web applications.",
+//       description: "Build reusable design systems for modern web applications.",
 
-      keywords: ["Design System", "UI", "UX", "Accessibility"],
+//       keywords: ["Design System", "UI", "UX", "Accessibility"],
 
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-25",
+//     publishedAt: "2026-06-25",
 
-    readingTime: 7,
+//     readingTime: 7,
 
-    featured: false,
+//     featured: false,
 
-    popular: false,
-  },
+//     popular: false,
+//   },
 
-  {
-    id: "post-7",
+//   {
+//     id: "post-7",
 
-    title: "Why Every Business Needs Digital Transformation",
+//     title: "Why Every Business Needs Digital Transformation",
 
-    slug: "why-every-business-needs-digital-transformation",
+//     slug: "why-every-business-needs-digital-transformation",
 
-    excerpt:
-      "Digital transformation helps organizations improve efficiency, reduce operational costs, and deliver better customer experiences through modern technology.",
+//     excerpt:
+//       "Digital transformation helps organizations improve efficiency, reduce operational costs, and deliver better customer experiences through modern technology.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Digital transformation is no longer optional.
+// Digital transformation is no longer optional.
 
-Businesses that modernize their operations gain a competitive advantage through automation, analytics and improved customer engagement.
+// Businesses that modernize their operations gain a competitive advantage through automation, analytics and improved customer engagement.
 
-## What Is Digital Transformation?
+// ## What Is Digital Transformation?
 
-Digital transformation involves adopting technology across every department.
+// Digital transformation involves adopting technology across every department.
 
-Examples include:
+// Examples include:
 
-- Cloud computing
-- AI automation
-- CRM systems
-- ERP solutions
-- Mobile applications
+// - Cloud computing
+// - AI automation
+// - CRM systems
+// - ERP solutions
+// - Mobile applications
 
-## Common Challenges
+// ## Common Challenges
 
-Organizations often struggle with:
+// Organizations often struggle with:
 
-- Legacy systems
-- Employee adoption
-- Data migration
-- Security
+// - Legacy systems
+// - Employee adoption
+// - Data migration
+// - Security
 
-## Benefits
+// ## Benefits
 
-- Faster operations
-- Better customer service
-- Lower costs
-- Improved scalability
+// - Faster operations
+// - Better customer service
+// - Lower costs
+// - Improved scalability
 
-## Conclusion
+// ## Conclusion
 
-Technology should support business goals. Successful digital transformation starts with solving real business problems.
-`,
+// Technology should support business goals. Successful digital transformation starts with solving real business problems.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1600&q=80",
 
-    category: categories[7],
+//     category: categories[7],
 
-    author: authors[1],
+//     author: authors[1],
 
-    tags: [
-      "Digital Transformation",
-      "Business",
-      "Automation",
-      "Cloud",
-      "Technology",
-    ],
+//     tags: [
+//       "Digital Transformation",
+//       "Business",
+//       "Automation",
+//       "Cloud",
+//       "Technology",
+//     ],
 
-    seo: {
-      title: "Why Every Business Needs Digital Transformation",
+//     seo: {
+//       title: "Why Every Business Needs Digital Transformation",
 
-      description:
-        "Learn how digital transformation helps businesses become more efficient and competitive.",
+//       description:
+//         "Learn how digital transformation helps businesses become more efficient and competitive.",
 
-      keywords: ["Digital Transformation", "Business", "Technology"],
+//       keywords: ["Digital Transformation", "Business", "Technology"],
 
-      image:
-        "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-21",
+//     publishedAt: "2026-06-21",
 
-    readingTime: 7,
+//     readingTime: 7,
 
-    featured: false,
+//     featured: false,
 
-    popular: false,
-  },
+//     popular: false,
+//   },
 
-  {
-    id: "post-8",
+//   {
+//     id: "post-8",
 
-    title: "Kubernetes for Beginners: Deploying Modern Applications",
+//     title: "Kubernetes for Beginners: Deploying Modern Applications",
 
-    slug: "kubernetes-for-beginners",
+//     slug: "kubernetes-for-beginners",
 
-    excerpt:
-      "Understand the fundamentals of Kubernetes, containers, deployments, services and scaling applications in production.",
+//     excerpt:
+//       "Understand the fundamentals of Kubernetes, containers, deployments, services and scaling applications in production.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Containers changed software deployment.
+// Containers changed software deployment.
 
-Kubernetes made container orchestration practical at scale.
+// Kubernetes made container orchestration practical at scale.
 
-## Core Concepts
+// ## Core Concepts
 
-- Pods
-- Deployments
-- Services
-- ConfigMaps
-- Secrets
+// - Pods
+// - Deployments
+// - Services
+// - ConfigMaps
+// - Secrets
 
-## Why Kubernetes?
+// ## Why Kubernetes?
 
-Benefits include:
+// Benefits include:
 
-- Auto scaling
-- Self healing
-- Rolling updates
-- High availability
+// - Auto scaling
+// - Self healing
+// - Rolling updates
+// - High availability
 
-## Best Practices
+// ## Best Practices
 
-- Monitor workloads
-- Limit resource usage
-- Keep clusters updated
-- Use namespaces
+// - Monitor workloads
+// - Limit resource usage
+// - Keep clusters updated
+// - Use namespaces
 
-## Conclusion
+// ## Conclusion
 
-Kubernetes provides a reliable platform for deploying modern cloud-native applications.
-`,
+// Kubernetes provides a reliable platform for deploying modern cloud-native applications.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
 
-    category: categories[3],
+//     category: categories[3],
 
-    author: authors[2],
+//     author: authors[2],
 
-    tags: ["Kubernetes", "Docker", "Cloud", "DevOps"],
+//     tags: ["Kubernetes", "Docker", "Cloud", "DevOps"],
 
-    seo: {
-      title: "Kubernetes for Beginners",
+//     seo: {
+//       title: "Kubernetes for Beginners",
 
-      description:
-        "Learn Kubernetes fundamentals for deploying scalable cloud applications.",
+//       description:
+//         "Learn Kubernetes fundamentals for deploying scalable cloud applications.",
 
-      keywords: ["Kubernetes", "Docker", "Cloud", "DevOps"],
+//       keywords: ["Kubernetes", "Docker", "Cloud", "DevOps"],
 
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-17",
+//     publishedAt: "2026-06-17",
 
-    readingTime: 9,
+//     readingTime: 9,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-9",
+//   {
+//     id: "post-9",
 
-    title: "10 TypeScript Tips Every Frontend Developer Should Know",
+//     title: "10 TypeScript Tips Every Frontend Developer Should Know",
 
-    slug: "typescript-tips-for-frontend-developers",
+//     slug: "typescript-tips-for-frontend-developers",
 
-    excerpt:
-      "Improve maintainability and reduce runtime errors with practical TypeScript techniques used in modern React applications.",
+//     excerpt:
+//       "Improve maintainability and reduce runtime errors with practical TypeScript techniques used in modern React applications.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-TypeScript helps developers write safer and more maintainable code.
+// TypeScript helps developers write safer and more maintainable code.
 
-## Use Interfaces
+// ## Use Interfaces
 
-Define clear contracts between components.
+// Define clear contracts between components.
 
-## Prefer Strict Mode
+// ## Prefer Strict Mode
 
-Enable strict mode from the beginning of every project.
+// Enable strict mode from the beginning of every project.
 
-## Utility Types
+// ## Utility Types
 
-Learn:
+// Learn:
 
-- Partial
-- Pick
-- Omit
-- Record
+// - Partial
+// - Pick
+// - Omit
+// - Record
 
-## Generics
+// ## Generics
 
-Generics improve reusability while maintaining type safety.
+// Generics improve reusability while maintaining type safety.
 
-## Conclusion
+// ## Conclusion
 
-Mastering TypeScript makes large React applications easier to scale and maintain.
-`,
+// Mastering TypeScript makes large React applications easier to scale and maintain.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
 
-    category: categories[1],
+//     category: categories[1],
 
-    author: authors[0],
+//     author: authors[0],
 
-    tags: ["TypeScript", "JavaScript", "React", "Frontend"],
+//     tags: ["TypeScript", "JavaScript", "React", "Frontend"],
 
-    seo: {
-      title: "TypeScript Tips for Frontend Developers",
+//     seo: {
+//       title: "TypeScript Tips for Frontend Developers",
 
-      description:
-        "Essential TypeScript techniques every frontend developer should know.",
+//       description:
+//         "Essential TypeScript techniques every frontend developer should know.",
 
-      keywords: ["TypeScript", "JavaScript", "Frontend"],
+//       keywords: ["TypeScript", "JavaScript", "Frontend"],
 
-      image:
-        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
-    },
+//       image:
+//         "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-12",
+//     publishedAt: "2026-06-12",
 
-    readingTime: 6,
+//     readingTime: 6,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
   
-  {
-    id: "post-10",
+//   {
+//     id: "post-10",
 
-    title: "Mastering TypeScript for Large Scale React Applications",
+//     title: "Mastering TypeScript for Large Scale React Applications",
 
-    slug: "mastering-typescript-large-scale-react-applications",
+//     slug: "mastering-typescript-large-scale-react-applications",
 
-    excerpt:
-      "Learn how TypeScript improves maintainability, scalability, and developer productivity in enterprise React projects.",
+//     excerpt:
+//       "Learn how TypeScript improves maintainability, scalability, and developer productivity in enterprise React projects.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-TypeScript has become the standard for modern React development.
+// TypeScript has become the standard for modern React development.
 
-## Benefits
+// ## Benefits
 
-Strong typing reduces runtime bugs.
+// Strong typing reduces runtime bugs.
 
-Interfaces improve code organization.
+// Interfaces improve code organization.
 
-Generics make components reusable.
+// Generics make components reusable.
 
-## Best Practices
+// ## Best Practices
 
-- Enable strict mode
-- Avoid any
-- Create reusable types
-- Use utility types
-- Keep types close to features
+// - Enable strict mode
+// - Avoid any
+// - Create reusable types
+// - Use utility types
+// - Keep types close to features
 
-## Conclusion
+// ## Conclusion
 
-TypeScript makes large applications easier to maintain.
-`,
+// TypeScript makes large applications easier to maintain.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
 
-    category: categories[1],
+//     category: categories[1],
 
-    author: authors[0],
+//     author: authors[0],
 
-    tags: ["TypeScript", "React", "Frontend"],
+//     tags: ["TypeScript", "React", "Frontend"],
 
-    seo: {
-      title: "Mastering TypeScript for Large Scale React Applications",
-      description: "Improve React applications with TypeScript best practices.",
-      keywords: ["TypeScript", "React", "Frontend"],
-      image:
-        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
-    },
+//     seo: {
+//       title: "Mastering TypeScript for Large Scale React Applications",
+//       description: "Improve React applications with TypeScript best practices.",
+//       keywords: ["TypeScript", "React", "Frontend"],
+//       image:
+//         "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-07-02",
+//     publishedAt: "2026-07-02",
 
-    updatedAt: "2026-07-03",
+//     updatedAt: "2026-07-03",
 
-    readingTime: 8,
+//     readingTime: 8,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-11",
+//   {
+//     id: "post-11",
 
-    title: "Building Secure REST APIs with Node.js and Express",
+//     title: "Building Secure REST APIs with Node.js and Express",
 
-    slug: "building-secure-rest-apis-nodejs-express",
+//     slug: "building-secure-rest-apis-nodejs-express",
 
-    excerpt:
-      "Protect your APIs using authentication, authorization, validation, rate limiting, and security best practices.",
+//     excerpt:
+//       "Protect your APIs using authentication, authorization, validation, rate limiting, and security best practices.",
 
-    content: `
-## API Security
+//     content: `
+// ## API Security
 
-Every API should validate requests.
+// Every API should validate requests.
 
-## Authentication
+// ## Authentication
 
-Use JWT or OAuth.
+// Use JWT or OAuth.
 
-## Security Checklist
+// ## Security Checklist
 
-- Helmet
-- Rate limiting
-- Input validation
-- Password hashing
-- HTTPS
+// - Helmet
+// - Rate limiting
+// - Input validation
+// - Password hashing
+// - HTTPS
 
-## Conclusion
+// ## Conclusion
 
-Security should be built into every API.
-`,
+// Security should be built into every API.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80",
 
-    category: categories[1],
+//     category: categories[1],
 
-    author: authors[1],
+//     author: authors[1],
 
-    tags: ["Node.js", "Express", "Backend"],
+//     tags: ["Node.js", "Express", "Backend"],
 
-    seo: {
-      title: "Building Secure REST APIs with Node.js and Express",
-      description: "Learn modern security practices for Express APIs.",
-      keywords: ["Node.js", "Express", "REST API"],
-      image:
-        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80",
-    },
+//     seo: {
+//       title: "Building Secure REST APIs with Node.js and Express",
+//       description: "Learn modern security practices for Express APIs.",
+//       keywords: ["Node.js", "Express", "REST API"],
+//       image:
+//         "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-29",
+//     publishedAt: "2026-06-29",
 
-    updatedAt: "2026-07-01",
+//     updatedAt: "2026-07-01",
 
-    readingTime: 9,
+//     readingTime: 9,
 
-    featured: false,
+//     featured: false,
 
-    popular: false,
-  },
+//     popular: false,
+//   },
 
-  {
-    id: "post-12",
+//   {
+//     id: "post-12",
 
-    title: "Cloud Cost Optimization Strategies Every Startup Should Know",
+//     title: "Cloud Cost Optimization Strategies Every Startup Should Know",
 
-    slug: "cloud-cost-optimization-strategies-startups",
+//     slug: "cloud-cost-optimization-strategies-startups",
 
-    excerpt:
-      "Reduce cloud expenses without sacrificing reliability by following proven optimization strategies.",
+//     excerpt:
+//       "Reduce cloud expenses without sacrificing reliability by following proven optimization strategies.",
 
-    content: `
-## Introduction
+//     content: `
+// ## Introduction
 
-Cloud spending grows quickly.
+// Cloud spending grows quickly.
 
-## Save Money
+// ## Save Money
 
-- Auto scaling
-- Reserved instances
-- Monitoring
-- Remove unused resources
+// - Auto scaling
+// - Reserved instances
+// - Monitoring
+// - Remove unused resources
 
-## Final Thoughts
+// ## Final Thoughts
 
-Small optimizations create significant savings.
-`,
+// Small optimizations create significant savings.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
 
-    category: categories[3],
+//     category: categories[3],
 
-    author: authors[0],
+//     author: authors[0],
 
-    tags: ["Cloud", "AWS", "DevOps"],
+//     tags: ["Cloud", "AWS", "DevOps"],
 
-    seo: {
-      title: "Cloud Cost Optimization Strategies Every Startup Should Know",
-      description: "Practical techniques to reduce cloud infrastructure costs.",
-      keywords: ["Cloud", "AWS", "Cost Optimization"],
-      image:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
-    },
+//     seo: {
+//       title: "Cloud Cost Optimization Strategies Every Startup Should Know",
+//       description: "Practical techniques to reduce cloud infrastructure costs.",
+//       keywords: ["Cloud", "AWS", "Cost Optimization"],
+//       image:
+//         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-25",
+//     publishedAt: "2026-06-25",
 
-    updatedAt: "2026-06-26",
+//     updatedAt: "2026-06-26",
 
-    readingTime: 6,
+//     readingTime: 6,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-13",
+//   {
+//     id: "post-13",
 
-    title: "Designing Modern UI with Tailwind CSS and shadcn/ui",
+//     title: "Designing Modern UI with Tailwind CSS and shadcn/ui",
 
-    slug: "designing-modern-ui-tailwind-shadcn",
+//     slug: "designing-modern-ui-tailwind-shadcn",
 
-    excerpt:
-      "Build clean, accessible, and reusable interfaces using Tailwind CSS and shadcn/ui components.",
+//     excerpt:
+//       "Build clean, accessible, and reusable interfaces using Tailwind CSS and shadcn/ui components.",
 
-    content: `
-## Why Tailwind
+//     content: `
+// ## Why Tailwind
 
-Utility-first styling speeds development.
+// Utility-first styling speeds development.
 
-## shadcn/ui
+// ## shadcn/ui
 
-Provides accessible and customizable components.
+// Provides accessible and customizable components.
 
-## Tips
+// ## Tips
 
-- Keep spacing consistent
-- Reuse components
-- Use design tokens
+// - Keep spacing consistent
+// - Reuse components
+// - Use design tokens
 
-## Conclusion
+// ## Conclusion
 
-A consistent design system improves development speed.
-`,
+// A consistent design system improves development speed.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
 
-    category: categories[4],
+//     category: categories[4],
 
-    author: authors[1],
+//     author: authors[1],
 
-    tags: ["Tailwind CSS", "UI", "Design"],
+//     tags: ["Tailwind CSS", "UI", "Design"],
 
-    seo: {
-      title: "Designing Modern UI with Tailwind CSS and shadcn/ui",
-      description: "Learn modern UI development with Tailwind CSS.",
-      keywords: ["Tailwind CSS", "shadcn/ui", "UI"],
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
-    },
+//     seo: {
+//       title: "Designing Modern UI with Tailwind CSS and shadcn/ui",
+//       description: "Learn modern UI development with Tailwind CSS.",
+//       keywords: ["Tailwind CSS", "shadcn/ui", "UI"],
+//       image:
+//         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-20",
+//     publishedAt: "2026-06-20",
 
-    updatedAt: "2026-06-21",
+//     updatedAt: "2026-06-21",
 
-    readingTime: 7,
+//     readingTime: 7,
 
-    featured: false,
+//     featured: false,
 
-    popular: false,
-  },
+//     popular: false,
+//   },
 
-  {
-    id: "post-14",
+//   {
+//     id: "post-14",
 
-    title: "Docker Essentials Every Developer Should Learn",
+//     title: "Docker Essentials Every Developer Should Learn",
 
-    slug: "docker-essentials-every-developer-should-learn",
+//     slug: "docker-essentials-every-developer-should-learn",
 
-    excerpt:
-      "Understand containers, images, Docker Compose, and deployment workflows used in modern software development.",
+//     excerpt:
+//       "Understand containers, images, Docker Compose, and deployment workflows used in modern software development.",
 
-    content: `
-## Containers
+//     content: `
+// ## Containers
 
-Containers package applications with dependencies.
+// Containers package applications with dependencies.
 
-## Docker Basics
+// ## Docker Basics
 
-- Images
-- Containers
-- Dockerfile
-- Compose
+// - Images
+// - Containers
+// - Dockerfile
+// - Compose
 
-## Benefits
+// ## Benefits
 
-Consistency across environments.
+// Consistency across environments.
 
-Faster deployments.
+// Faster deployments.
 
-Simpler collaboration.
+// Simpler collaboration.
 
-## Conclusion
+// ## Conclusion
 
-Docker has become an essential developer skill.
-`,
+// Docker has become an essential developer skill.
+// `,
 
-    coverImage:
-      "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=1600&q=80",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=1600&q=80",
 
-    category: categories[3],
+//     category: categories[3],
 
-    author: authors[0],
+//     author: authors[0],
 
-    tags: ["Docker", "Containers", "DevOps"],
+//     tags: ["Docker", "Containers", "DevOps"],
 
-    seo: {
-      title: "Docker Essentials Every Developer Should Learn",
-      description: "Learn the Docker fundamentals used in modern development.",
-      keywords: ["Docker", "Containers", "DevOps"],
-      image:
-        "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=1600&q=80",
-    },
+//     seo: {
+//       title: "Docker Essentials Every Developer Should Learn",
+//       description: "Learn the Docker fundamentals used in modern development.",
+//       keywords: ["Docker", "Containers", "DevOps"],
+//       image:
+//         "https://images.unsplash.com/photo-1605745341112-85968b19335b?w=1600&q=80",
+//     },
 
-    publishedAt: "2026-06-15",
+//     publishedAt: "2026-06-15",
 
-    updatedAt: "2026-06-16",
+//     updatedAt: "2026-06-16",
 
-    readingTime: 8,
+//     readingTime: 8,
 
-    featured: false,
+//     featured: false,
 
-    popular: true,
-  },
+//     popular: true,
+//   },
 
-  {
-    id: "post-15",
-    slug: "graphql-vs-rest-which-api-should-you-choose",
-    title: "GraphQL vs REST: Which API Should You Choose?",
-    excerpt:
-      "Compare GraphQL and REST to understand their strengths, tradeoffs, and the best use cases for modern web applications.",
-    coverImage:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
-    category: categories[3],
-    author: authors[0],
-    publishedAt: "2025-02-20",
-    readingTime: 8,
-    featured: false,
-    tags: ["GraphQL", "REST API", "API Design", "Next.js", "Backend"],
-    seo: {
-      title: "GraphQL vs REST: Which API Should You Choose?",
-      description: "Compare GraphQL and REST to understand their strengths, tradeoffs, and the best use cases for modern web applications.",
-      keywords: ["GraphQL", "REST API", "API Design", "Backend"],
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80",
-    },
-    popular: false,
-    content: `
-## Introduction
+//   {
+//     id: "post-15",
+//     slug: "graphql-vs-rest-which-api-should-you-choose",
+//     title: "GraphQL vs REST: Which API Should You Choose?",
+//     excerpt:
+//       "Compare GraphQL and REST to understand their strengths, tradeoffs, and the best use cases for modern web applications.",
+//     coverImage:
+//       "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80",
+//     category: categories[3],
+//     author: authors[0],
+//     publishedAt: "2025-02-20",
+//     readingTime: 8,
+//     featured: false,
+//     tags: ["GraphQL", "REST API", "API Design", "Next.js", "Backend"],
+//     seo: {
+//       title: "GraphQL vs REST: Which API Should You Choose?",
+//       description: "Compare GraphQL and REST to understand their strengths, tradeoffs, and the best use cases for modern web applications.",
+//       keywords: ["GraphQL", "REST API", "API Design", "Backend"],
+//       image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1600&q=80",
+//     },
+//     popular: false,
+//     content: `
+// ## Introduction
 
-Choosing between GraphQL and REST is a common decision when building modern applications. Both approaches solve the same problem but take different paths. The right choice depends on your application's requirements, team experience, and long term maintenance goals.
+// Choosing between GraphQL and REST is a common decision when building modern applications. Both approaches solve the same problem but take different paths. The right choice depends on your application's requirements, team experience, and long term maintenance goals.
 
-## What is REST?
+// ## What is REST?
 
-REST is an architectural style where resources are exposed through endpoints such as:
+// REST is an architectural style where resources are exposed through endpoints such as:
 
-- GET /users
-- POST /users
-- PUT /users/:id
-- DELETE /users/:id
+// - GET /users
+// - POST /users
+// - PUT /users/:id
+// - DELETE /users/:id
 
-REST is widely adopted, simple to understand, and works well for most applications.
+// REST is widely adopted, simple to understand, and works well for most applications.
 
-## What is GraphQL?
+// ## What is GraphQL?
 
-GraphQL allows clients to request exactly the data they need from a single endpoint. Instead of multiple REST endpoints, applications send queries that define the required fields.
+// GraphQL allows clients to request exactly the data they need from a single endpoint. Instead of multiple REST endpoints, applications send queries that define the required fields.
 
-This reduces over-fetching and under-fetching of data.
+// This reduces over-fetching and under-fetching of data.
 
-## GraphQL Advantages
+// ## GraphQL Advantages
 
-- Fetch only the required fields.
-- Reduce the number of API requests.
-- Strongly typed schema.
-- Excellent developer tooling.
-- Ideal for mobile and complex frontend applications.
+// - Fetch only the required fields.
+// - Reduce the number of API requests.
+// - Strongly typed schema.
+// - Excellent developer tooling.
+// - Ideal for mobile and complex frontend applications.
 
-## REST Advantages
+// ## REST Advantages
 
-- Easy to cache with HTTP.
-- Simpler implementation.
-- Large ecosystem and community support.
-- Works well for CRUD applications.
-- Easier for beginners.
+// - Easy to cache with HTTP.
+// - Simpler implementation.
+// - Large ecosystem and community support.
+// - Works well for CRUD applications.
+// - Easier for beginners.
 
-## When to Choose GraphQL
+// ## When to Choose GraphQL
 
-GraphQL is a good choice when:
+// GraphQL is a good choice when:
 
-- Your frontend requires data from multiple resources.
-- You have web and mobile clients with different data needs.
-- Your application has complex relationships between entities.
-- You want a flexible API that evolves without versioning.
+// - Your frontend requires data from multiple resources.
+// - You have web and mobile clients with different data needs.
+// - Your application has complex relationships between entities.
+// - You want a flexible API that evolves without versioning.
 
-## When to Choose REST
+// ## When to Choose REST
 
-REST is a better option when:
+// REST is a better option when:
 
-- Building simple CRUD applications.
-- API caching is important.
-- Your team prefers conventional architecture.
-- Third party integrations rely on REST endpoints.
+// - Building simple CRUD applications.
+// - API caching is important.
+// - Your team prefers conventional architecture.
+// - Third party integrations rely on REST endpoints.
 
-## Performance Considerations
+// ## Performance Considerations
 
-GraphQL reduces network requests but can introduce expensive queries if not managed carefully. REST is easier to cache and monitor but may require multiple requests to gather related data.
+// GraphQL reduces network requests but can introduce expensive queries if not managed carefully. REST is easier to cache and monitor but may require multiple requests to gather related data.
 
-Proper caching, pagination, and rate limiting are important regardless of the API style.
+// Proper caching, pagination, and rate limiting are important regardless of the API style.
 
-## Final Thoughts
+// ## Final Thoughts
 
-Neither GraphQL nor REST is universally better. REST remains an excellent choice for straightforward services, while GraphQL shines in applications with complex data requirements. Evaluate your team's expertise, application complexity, and future scalability before making the decision.
-`,
-  },
-];
+// Neither GraphQL nor REST is universally better. REST remains an excellent choice for straightforward services, while GraphQL shines in applications with complex data requirements. Evaluate your team's expertise, application complexity, and future scalability before making the decision.
+// `,
+//   },
+// ];

@@ -1,25 +1,27 @@
-"use client";
-
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 
 import Container from "@/components/layout/Container";
-
 import { AuthorHero, AuthorArticles } from "@/components/blog/author";
 
-import { getAuthorBySlug, getPostsByAuthor } from "@/lib/blog/author";
+import { getAuthor, getPostsByAuthor } from "@/services/author.service";
 
-export default function AuthorPage() {
-  const params = useParams();
+interface AuthorPageProps {
+  params: Promise<{
+    authorSlug: string;
+  }>;
+}
 
-  const slug = params.authorSlug as string;
+export default async function AuthorPage({ params }: AuthorPageProps) {
+  const { authorSlug } = await params;
 
-  const author = getAuthorBySlug(slug);
+  const [author, posts] = await Promise.all([
+    getAuthor(authorSlug),
+    getPostsByAuthor(authorSlug),
+  ]);
 
   if (!author) {
     notFound();
   }
-
-  const posts = getPostsByAuthor(author.slug);
 
   return (
     <main className="py-14">
