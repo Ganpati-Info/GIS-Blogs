@@ -52,7 +52,7 @@ const POST_FIELDS = groq`
     social
   },
 
-  categories[]->{
+  category->{
     _id,
     title,
     slug,
@@ -70,7 +70,7 @@ export const POST_QUERY = groq`
   *[
     _type == "post" &&
     slug.current == $postSlug &&
-    $categorySlug in categories[]->slug.current
+    category->slug.current == $categorySlug
   ][0]{
     ${POST_FIELDS}
   }
@@ -78,7 +78,7 @@ export const POST_QUERY = groq`
 export const POSTS_BY_CATEGORY_QUERY = groq`
   *[
     _type == "post" &&
-    $categorySlug in categories[]->slug.current
+    category->slug.current == $categorySlug
   ] | order(publishedAt desc) {
     ${POST_FIELDS}
   }
@@ -220,7 +220,7 @@ export const AUTHOR_QUERY = groq`
         alt
       },
 
-      categories[]->{
+      category->{
         title,
         slug,
         color,

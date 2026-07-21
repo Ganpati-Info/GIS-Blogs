@@ -19,8 +19,8 @@ export function mapPost(post: any): Post {
 
     coverImage: post.coverImage?.asset?.url ?? "",
 
-    category: post.categories?.length
-      ? mapCategory(post.categories[0])
+    category: post.category
+      ? mapCategory(post.category)
       : {
           id: "",
           name: "",
@@ -37,7 +37,9 @@ export function mapPost(post: any): Post {
     seo: {
       title: post.seoTitle,
       description: post.seoDescription,
-      keywords: post.seoKeywords?.split(",").map((keyword: string) => keyword.trim()) ?? [],
+      keywords:
+        post.seoKeywords?.split(",").map((keyword: string) => keyword.trim()) ??
+        [],
     },
 
     publishedAt: post.publishedAt,
