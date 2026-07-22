@@ -15,11 +15,11 @@ export default function CategoryHero({ category, total }: CategoryHeroProps) {
     <section className="relative overflow-hidden">
       <div className="relative z-10">
         <Link
-          href="/posts"
+          href="/"
           className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition hover:text-primary"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Blogs
+          Back to Home
         </Link>
 
         <div className="mt-6 flex flex-wrap items-center gap-4">

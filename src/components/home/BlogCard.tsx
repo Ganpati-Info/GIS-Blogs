@@ -46,16 +46,20 @@ export default function BlogCard({ post }: BlogCardProps) {
         </p>
 
         <div className="mt-6 flex items-center gap-3">
-          <Image
-            src={post.author.avatar}
-            alt={post.author.name}
-            width={42}
-            height={42}
-            className="rounded-full object-center"
-          />
+          <Link href={`/author/${post.author.slug}`}>
+            <Image
+              src={post.author.avatar}
+              alt={post.author.name}
+              width={42}
+              height={42}
+              className="rounded-full object-center"
+            />
+          </Link>
 
           <div className="min-w-0">
+            <Link href={`/author/${post.author.slug}`} className="flex items-center gap-2">
             <p className="truncate text-sm font-semibold">{post.author.name}</p>
+            </Link>
 
             <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <CalendarDays className="h-3.5 w-3.5" />

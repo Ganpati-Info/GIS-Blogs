@@ -33,7 +33,7 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
           </span>
 
           <Link href={`/${post.category.slug}/${post.slug}`} className="group">
-            <h1 className="text-2xl font-bold leading-tight transition-colors group-hover:text-primary sm:text-3xl xl:text-5xl">
+            <h1 className="text-2xl font-bold leading-tight transition-colors group-hover:text-primary md:text-3xl xl:text-4xl">
               {post.title}
             </h1>
           </Link>
@@ -44,6 +44,7 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
 
           {/* Author */}
           <div className="mt-8 flex items-center gap-4">
+            <Link href={`/author/${post.author.slug}`}>
             <Image
               src={post.author.avatar}
               alt={post.author.name}
@@ -51,9 +52,12 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
               height={52}
               className="h-12 w-12 rounded-full object-cover sm:h-14 sm:w-14"
             />
+            </Link>
 
             <div>
+              <Link href={`/author/${post.author.slug}`} className="font-semibold text-foreground transition-colors hover:text-primary">
               <p className="font-semibold">{post.author.name}</p>
+              </Link>
 
               <div className="mt-1 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
                 <span>
