@@ -40,13 +40,15 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
       <div className="mt-10 flex flex-col gap-6 border-y py-2 sm:flex-row sm:items-center sm:justify-between">
         {/* Author */}
         <div className="flex items-center gap-4">
-          <Image
-            src={post.author.avatar}
-            alt={post.author.name}
-            width={56}
-            height={56}
+          <Link href={`/author/${post.author.slug}`}>
+            <Image
+              src={post.author.avatar}
+              alt={post.author.name}
+              width={56}
+              height={56}
             className="rounded-full object-center"
           />
+          </Link>
 
           <div className="flex items-center gap-2">
             <Link

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import Container from "@/components/layout/Container";
+import BackButton from "@/components/common/BackButton";
 import { AuthorHero, AuthorArticles } from "@/components/blog/author";
 
 import { getAuthor, getPostsByAuthor } from "@/services/author.service";
@@ -26,6 +27,8 @@ export default async function AuthorPage({ params }: AuthorPageProps) {
   return (
     <main className="py-14">
       <Container className="max-w-6xl space-y-20">
+        <BackButton />
+
         <AuthorHero author={author} articlesCount={posts.length} />
 
         <AuthorArticles author={author} posts={posts} />
