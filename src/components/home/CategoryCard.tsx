@@ -1,17 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {
-  Bot,
-  Briefcase,
-  Cloud,
-  Code2,
-  Palette,
-  Smartphone,
-  Cpu,
-  LayoutGrid,
-} from "lucide-react";
+import { LayoutGrid } from "lucide-react";
 
+import Icon from "@/components/common/Icon";
 import { Category } from "@/types";
 
 interface CategoryTabsProps {
@@ -19,17 +11,6 @@ interface CategoryTabsProps {
   selectedCategory: string;
   onCategoryChange: (slug: string) => void;
 }
-
-const icons = {
-  "artificial-intelligence": Bot,
-  "web-development": Code2,
-  "mobile-development": Smartphone,
-  "cloud-computing": Cloud,
-  "ui-ux-design": Palette,
-  "digital-transformation": Cpu,
-  "case-studies": Briefcase,
-  default: LayoutGrid,
-};
 
 export default function CategoryTabs({
   categories,
@@ -87,7 +68,6 @@ export default function CategoryTabs({
     isDragging.current = true;
 
     const startX = e.clientX;
-
     const startLeft = thumbLeft;
 
     const move = (event: MouseEvent) => {
@@ -126,7 +106,6 @@ export default function CategoryTabs({
       <div ref={scrollRef} className="no-scrollbar overflow-x-auto">
         <div className="flex w-max gap-3">
           {/* All Stories */}
-
           <button
             type="button"
             onClick={() => onCategoryChange("all")}
@@ -143,14 +122,18 @@ export default function CategoryTabs({
             >
               <LayoutGrid
                 className={`h-5 w-5 ${
-                  selectedCategory === "all" ? "text-white" : "text-primary"
+                  selectedCategory === "all"
+                    ? "text-white"
+                    : "text-primary"
                 }`}
               />
             </div>
 
             <span
               className={`font-medium ${
-                selectedCategory === "all" ? "text-primary" : "text-foreground"
+                selectedCategory === "all"
+                  ? "text-primary"
+                  : "text-foreground"
               }`}
             >
               All Stories
@@ -158,20 +141,18 @@ export default function CategoryTabs({
           </button>
 
           {/* Categories */}
-
           {categories.map((category) => {
-            const Icon =
-              icons[category.slug as keyof typeof icons] ?? icons.default;
-
             const active = selectedCategory === category.slug;
-
+            console.log(category.icon);
             return (
               <button
                 key={category.id}
                 type="button"
                 onClick={() => onCategoryChange(category.slug)}
                 className={`flex shrink-0 items-center gap-3 rounded-lg border px-5 py-3 transition ${
-                  active ? "border-primary bg-primary/10" : "hover:bg-muted"
+                  active
+                    ? "border-primary bg-primary/10"
+                    : "hover:bg-muted"
                 }`}
               >
                 <div
@@ -183,6 +164,7 @@ export default function CategoryTabs({
                   }}
                 >
                   <Icon
+                    name={category.icon}
                     className="h-5 w-5"
                     style={{
                       color: active ? "#ffffff" : category.color,
@@ -191,7 +173,9 @@ export default function CategoryTabs({
                 </div>
 
                 <span
-                  className={`font-medium ${active ? "text-primary" : ""}`}
+                  className={`font-medium ${
+                    active ? "text-primary" : ""
+                  }`}
                   style={{
                     color: active ? undefined : category.color,
                   }}
@@ -205,8 +189,10 @@ export default function CategoryTabs({
       </div>
 
       {/* Custom Scrollbar */}
-
-      <div ref={trackRef} className="mt-4 h-1.5 w-full rounded-full bg-muted">
+      <div
+        ref={trackRef}
+        className="mt-4 h-1.5 w-full rounded-full bg-muted"
+      >
         <div
           onMouseDown={handleMouseDown}
           className="h-full cursor-grab rounded-full bg-primary transition-colors hover:bg-primary/90 active:cursor-grabbing"
