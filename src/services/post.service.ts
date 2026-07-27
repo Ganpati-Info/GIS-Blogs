@@ -11,7 +11,23 @@ import { mapPost } from "@/lib/sanity/mappers/post.mapper";
 import { Post } from "@/types";
 
 export async function getPosts(): Promise<Post[]> {
-  const posts = await client.fetch(POSTS_QUERY);
+  const posts = await client.fetch(
+    POSTS_QUERY,
+    {},
+    {
+      cache: "no-store",
+    },
+  );
+
+  console.log("SANITY DEBUG", {
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    postCount: posts.length,
+    posts: posts.map((post: any) => ({
+      id: post._id,
+      title: post.title,
+    })),
+  });
 
   return posts.map(mapPost);
 }
