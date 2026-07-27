@@ -143,7 +143,6 @@ export default function CategoryTabs({
           {/* Categories */}
           {categories.map((category) => {
             const active = selectedCategory === category.slug;
-            console.log(category.icon);
             return (
               <button
                 key={category.id}

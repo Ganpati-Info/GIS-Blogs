@@ -12,12 +12,6 @@ export default async function HomePage() {
 
   const popularPosts = posts.filter((post) => post.popular);
 
-console.log(
-  posts.map((p) => ({
-    title: p.title,
-    featured: p.featured,
-  }))
-);
 
   return (
     <HomePageClient
