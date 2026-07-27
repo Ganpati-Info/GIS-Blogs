@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import Container from "@/components/layout/Container";
@@ -19,6 +20,78 @@ interface BlogPostPageProps {
     categorySlug: string;
     postSlug: string;
   }>;
+}
+
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
+  const { categorySlug, postSlug } = await params;
+
+  const post = await getPost(categorySlug, postSlug);
+
+  if (!post) {
+    return {
+      title: "Post Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const title = post.seo?.title || post.title;
+  const description = post.seo?.description || post.excerpt;
+  const keywords = post.seo?.keywords ?? post.tags;
+  const canonicalUrl = `/blogs/${categorySlug}/${postSlug}`;
+
+  return {
+    title,
+    description,
+    keywords,
+
+    alternates: {
+      canonical: canonicalUrl,
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    openGraph: {
+      type: "article",
+
+      url: canonicalUrl,
+
+      title,
+      description,
+
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt,
+
+      authors: post.author?.name ? [post.author.name] : undefined,
+
+      tags: post.tags,
+
+      images: post.coverImage
+        ? [
+            {
+              url: post.coverImage,
+              alt: post.title,
+            },
+          ]
+        : undefined,
+    },
+
+    twitter: {
+      card: "summary_large_image",
+
+      title,
+      description,
+
+      images: post.coverImage ? [post.coverImage] : undefined,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {

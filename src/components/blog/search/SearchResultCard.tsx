@@ -55,18 +55,18 @@ export default function SearchResultCard({
           {post.category.name}
         </p>
 
-        <h3 className="line-clamp-2 text-sm font-semibold transition-colors group-hover:text-primary">
+        <h3 className="text-sm font-semibold transition-colors group-hover:text-primary">
           {highlight(post.title, query)}
         </h3>
 
-        <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
+        <p className="mt-1 leading-snug text-xs text-muted-foreground">
           {highlight(post.excerpt, query)}
         </p>
 
-        <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
+        {/* <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
           <Clock className="h-3.5 w-3.5" />
           <span>{post.readingTime} min read</span>
-        </div>
+        </div> */}
       </div>
     </Link>
   );

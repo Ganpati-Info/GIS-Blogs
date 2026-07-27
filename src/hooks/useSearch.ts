@@ -22,46 +22,48 @@ export function useSearch({ posts, delay = 250, limit = 5 }: UseSearchOptions) {
     return () => clearTimeout(timer);
   }, [query, delay]);
 
-  const results = useMemo(() => {
-    if (!debouncedQuery.trim()) return [];
+  const allResults = useMemo(() => {
+    const keyword = debouncedQuery.trim().toLowerCase();
 
-    const keyword = debouncedQuery.toLowerCase();
-
-    return posts
-      .filter((post) => {
-        return (
-          post.title.toLowerCase().includes(keyword) ||
-          post.excerpt.toLowerCase().includes(keyword) ||
-          post.category.name.toLowerCase().includes(keyword) ||
-          post.author.name.toLowerCase().includes(keyword) ||
-          post.tags.some((tag) => tag.toLowerCase().includes(keyword))
-        );
-      })
-      .slice(0, limit);
-  }, [posts, debouncedQuery, limit]);
-
-  const totalResults = useMemo(() => {
-    if (!debouncedQuery.trim()) return 0;
-
-    const keyword = debouncedQuery.toLowerCase();
+    if (!keyword) {
+      return [];
+    }
 
     return posts.filter((post) => {
+      const title = post.title?.toLowerCase() ?? "";
+      const excerpt = post.excerpt?.toLowerCase() ?? "";
+      const category = post.category?.name?.toLowerCase() ?? "";
+      const author = post.author?.name?.toLowerCase() ?? "";
+
+      const tags = post.tags?.map((tag) => tag.toLowerCase()) ?? [];
+
       return (
-        post.title.toLowerCase().includes(keyword) ||
-        post.excerpt.toLowerCase().includes(keyword) ||
-        post.category.name.toLowerCase().includes(keyword) ||
-        post.author.name.toLowerCase().includes(keyword) ||
-        post.tags.some((tag) => tag.toLowerCase().includes(keyword))
+        title.includes(keyword) ||
+        excerpt.includes(keyword) ||
+        category.includes(keyword) ||
+        author.includes(keyword) ||
+        tags.some((tag) => tag.includes(keyword))
       );
-    }).length;
+    });
   }, [posts, debouncedQuery]);
+
+  // Only these appear inside the search dialog
+  const results = useMemo(() => {
+    return allResults.slice(0, limit);
+  }, [allResults, limit]);
+
+  // Real number of matches
+  const totalResults = allResults.length;
 
   return {
     query,
     setQuery,
+
     debouncedQuery,
+
     results,
     totalResults,
+
     isSearching: query !== debouncedQuery,
   };
 }

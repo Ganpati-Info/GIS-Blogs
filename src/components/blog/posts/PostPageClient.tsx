@@ -18,11 +18,15 @@ import { Post } from "@/types";
 
 interface PostsPageClientProps {
   posts: Post[];
+  initialQuery?: string;
 }
 
 const INITIAL_POSTS = 8;
 
-export default function PostsPageClient({ posts }: PostsPageClientProps) {
+export default function PostsPageClient({
+  posts,
+  initialQuery = "",
+}: PostsPageClientProps) {
   const {
     query,
     setQuery,
@@ -40,6 +44,7 @@ export default function PostsPageClient({ posts }: PostsPageClientProps) {
   } = usePosts({
     posts,
     initialVisible: INITIAL_POSTS,
+    initialQuery,
   });
 
   const visible = filteredPosts.slice(0, visiblePosts);
