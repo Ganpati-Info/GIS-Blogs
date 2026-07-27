@@ -9,39 +9,83 @@ import {
 import { mapPost } from "@/lib/sanity/mappers/post.mapper";
 
 import { Post } from "@/types";
+import { fallbackPosts } from "@/data/fallback-content";
 
-export async function getPosts(): Promise<Post[]> {
-  const posts = await client.fetch(
-    POSTS_QUERY,
-    {},
-    {
-      cache: "no-store",
-    },
-  );
+const hasSanityConfig =
+  Boolean(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID) &&
+  Boolean(process.env.NEXT_PUBLIC_SANITY_DATASET) &&
+  Boolean(process.env.NEXT_PUBLIC_SANITY_API_VERSION);
 
-  return posts.map(mapPost);
-}
-
-export async function getPost(
-  categorySlug: string,
-  postSlug: string,
-): Promise<Post | null> {
-  const post = await client.fetch(POST_QUERY, {
-    categorySlug,
-    postSlug,
+async function withTimeout<T>(
+  promise: Promise<T>,
+  fallback: T,
+  timeoutMs = 5000,
+) {
+  const timeout = new Promise<T>((resolve) => {
+    setTimeout(() => resolve(fallback), timeoutMs);
   });
 
-  return post ? mapPost(post) : null;
+  return Promise.race([promise.catch(() => fallback), timeout]);
+}
+
+export async function getPosts(): Promise<Post[]> {
+  if (!hasSanityConfig) {
+    return fallbackPosts;
+  }
+
+  const posts = client
+    .fetch(
+      POSTS_QUERY,
+      {},
+      {
+        cache: "no-store",
+      },
+    )
+    .catch(() => fallbackPosts);
+
+  const resolvedPosts = await withTimeout(posts, fallbackPosts);
+
+  return Array.isArray(resolvedPosts)
+    ? resolvedPosts.map(mapPost)
+    : fallbackPosts;
+}
+
+export async function getPost(postSlug: string): Promise<Post | null> {
+  if (!hasSanityConfig) {
+    return fallbackPosts.find((post) => post.slug === postSlug) ?? null;
+  }
+
+  const post = client
+    .fetch(POST_QUERY, {
+      postSlug,
+    })
+    .catch(() => null);
+
+  const resolvedPost = await withTimeout(post, null);
+
+  return resolvedPost
+    ? mapPost(resolvedPost)
+    : (fallbackPosts.find((item) => item.slug === postSlug) ?? null);
 }
 
 export async function getPostsByCategory(
   categorySlug: string,
 ): Promise<Post[]> {
-  const posts = await client.fetch(POSTS_BY_CATEGORY_QUERY, {
-    categorySlug,
-  });
+  if (!hasSanityConfig) {
+    return fallbackPosts.filter((post) => post.category.slug === categorySlug);
+  }
 
-  return posts.map(mapPost);
+  const posts = client
+    .fetch(POSTS_BY_CATEGORY_QUERY, {
+      categorySlug,
+    })
+    .catch(() => fallbackPosts);
+
+  const resolvedPosts = await withTimeout(posts, fallbackPosts);
+
+  return Array.isArray(resolvedPosts)
+    ? resolvedPosts.map(mapPost)
+    : fallbackPosts.filter((post) => post.category.slug === categorySlug);
 }
 
 export async function getRelatedPosts(

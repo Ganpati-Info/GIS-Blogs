@@ -45,9 +45,9 @@ export default function HomePageClient({
 
   const sectionTitle =
     selectedCategory === "all"
-      ? "Latest Stories"
+      ? "All Stories"
       : (categories.find((category) => category.slug === selectedCategory)
-          ?.name ?? "Latest Stories");
+          ?.name ?? "All Stories");
 
   return (
     <main>
@@ -64,7 +64,7 @@ export default function HomePageClient({
           />
         </section>
 
-        {/* Latest Stories */}
+        {/* All Stories */}
         <section className="mt-12 lg:mt-16">
           <div className="mb-8 space-y-5">
             <div>

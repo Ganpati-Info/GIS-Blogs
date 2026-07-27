@@ -69,8 +69,7 @@ export const POSTS_QUERY = groq`
 export const POST_QUERY = groq`
   *[
     _type == "post" &&
-    slug.current == $postSlug &&
-    category->slug.current == $categorySlug
+    slug.current == $postSlug
   ][0]{
     ${POST_FIELDS}
   }

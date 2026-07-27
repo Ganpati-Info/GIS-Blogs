@@ -12,26 +12,41 @@ import {
   ReadingProgress,
   RelatedPosts,
 } from "@/components/blog/article";
+import CategoryHero from "@/components/blog/category/CategoryHero";
+import CategoryPageClient from "@/components/blog/category/CategoryPageClient";
 
+import { getCategory, getPostsByCategory } from "@/services/category.service";
 import { getPost, getRelatedPosts } from "@/services/post.service";
 
-interface BlogPostPageProps {
+interface SlugPageProps {
   params: Promise<{
-    categorySlug: string;
-    postSlug: string;
+    slug: string;
   }>;
 }
 
 export async function generateMetadata({
   params,
-}: BlogPostPageProps): Promise<Metadata> {
-  const { categorySlug, postSlug } = await params;
+}: SlugPageProps): Promise<Metadata> {
+  const { slug } = await params;
 
-  const post = await getPost(categorySlug, postSlug);
+  const category = await getCategory(slug);
+
+  if (category) {
+    return {
+      title: category.name,
+      description: category.description,
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  }
+
+  const post = await getPost(slug);
 
   if (!post) {
     return {
-      title: "Post Not Found",
+      title: "Page Not Found",
       robots: {
         index: false,
         follow: false,
@@ -42,7 +57,7 @@ export async function generateMetadata({
   const title = post.seo?.title || post.title;
   const description = post.seo?.description || post.excerpt;
   const keywords = post.seo?.keywords ?? post.tags;
-  const canonicalUrl = `/blogs/${categorySlug}/${postSlug}`;
+  const canonicalUrl = `/${slug}`;
 
   return {
     title,
@@ -60,19 +75,13 @@ export async function generateMetadata({
 
     openGraph: {
       type: "article",
-
       url: canonicalUrl,
-
       title,
       description,
-
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
-
       authors: post.author?.name ? [post.author.name] : undefined,
-
       tags: post.tags,
-
       images: post.coverImage
         ? [
             {
@@ -85,19 +94,33 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
-
       title,
       description,
-
       images: post.coverImage ? [post.coverImage] : undefined,
     },
   };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { categorySlug, postSlug } = await params;
+export default async function SlugPage({ params }: SlugPageProps) {
+  const { slug } = await params;
 
-  const post = await getPost(categorySlug, postSlug);
+  const category = await getCategory(slug);
+
+  if (category) {
+    const posts = await getPostsByCategory(slug);
+
+    return (
+      <main>
+        <Container className="max-w-7xl py-8 lg:py-10">
+          <CategoryHero category={category} total={posts.length} />
+
+          <CategoryPageClient posts={posts} />
+        </Container>
+      </main>
+    );
+  }
+
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();

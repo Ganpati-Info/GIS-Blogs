@@ -27,7 +27,7 @@ export default function PopularPosts({ posts }: PopularPostsProps) {
         {posts.map((post) => (
           <Link
             key={post.id}
-            href={`/${post.category.slug}/${post.slug}`}
+            href={`/${post.slug}`}
             className="group flex gap-4"
           >
             <div className="h-20 w-28 flex-shrink-0 overflow-hidden rounded-lg">

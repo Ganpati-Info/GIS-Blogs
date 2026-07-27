@@ -34,7 +34,7 @@ export default function SearchResultCard({
 }: SearchResultCardProps) {
   return (
     <Link
-      href={`/${post.category.slug}/${post.slug}`}
+      href={`/${post.slug}`}
       className="group flex gap-4 rounded-lg p-3 transition hover:bg-muted"
     >
       <Image

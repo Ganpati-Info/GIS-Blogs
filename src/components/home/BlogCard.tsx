@@ -11,7 +11,7 @@ interface BlogCardProps {
 export default function BlogCard({ post }: BlogCardProps) {
   return (
     <article className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <Link href={`/${post.category.slug}/${post.slug}`}>
+      <Link href={`/${post.slug}`}>
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={post.coverImage}
@@ -35,7 +35,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           </span>
         </Link>
 
-        <Link href={`/${post.category.slug}/${post.slug}`}>
+        <Link href={`/${post.slug}`}>
           <h3 className="mt-4 line-clamp-2 text-2xl font-bold transition-colors group-hover:text-primary">
             {post.title}
           </h3>
@@ -57,8 +57,13 @@ export default function BlogCard({ post }: BlogCardProps) {
           </Link>
 
           <div className="min-w-0">
-            <Link href={`/author/${post.author.slug}`} className="flex items-center gap-2">
-            <p className="truncate text-sm font-semibold">{post.author.name}</p>
+            <Link
+              href={`/author/${post.author.slug}`}
+              className="flex items-center gap-2"
+            >
+              <p className="truncate text-sm font-semibold">
+                {post.author.name}
+              </p>
             </Link>
 
             <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
