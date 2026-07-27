@@ -19,16 +19,6 @@ export async function getPosts(): Promise<Post[]> {
     },
   );
 
-  console.log("SANITY DEBUG", {
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-    postCount: posts.length,
-    posts: posts.map((post: any) => ({
-      id: post._id,
-      title: post.title,
-    })),
-  });
-
   return posts.map(mapPost);
 }
 
