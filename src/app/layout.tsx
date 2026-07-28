@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-
+import { getPosts } from "@/services/post.service";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -74,17 +74,18 @@ export const viewport: Viewport = {
   themeColor: "#25499F",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const posts = await getPosts();
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-background text-foreground antialiased`}
       >
-        <Navbar />
+        <Navbar allPosts={posts}/>
 
         <main id="main-content" className="flex-1">
           {children}
