@@ -88,7 +88,7 @@ export default function HomePageClient({
                 <ArrowRight className="h-4 w-4" />
               </Link>
 
-              <SearchDialog posts={allPosts} />
+              {/* <SearchDialog posts={allPosts} /> */}
             </div>
           </div>
 
