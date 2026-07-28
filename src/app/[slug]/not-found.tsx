@@ -21,14 +21,14 @@ export default function NotFound() {
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button asChild size="lg">
+          <Button size="lg">
             <Link href="/">
               <Home className="mr-2 h-5 w-5" />
               Back to Home
             </Link>
           </Button>
 
-          <Button asChild variant="secondary" size="lg">
+          <Button variant="secondary" size="lg">
             <Link href="/posts">
               <ArrowLeft className="mr-2 h-5 w-5" />
               Browse Posts
