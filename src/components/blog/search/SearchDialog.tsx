@@ -57,7 +57,7 @@ export default function SearchDialog({ posts }: SearchDialogProps) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-11 w-full items-center justify-between rounded-lg border bg-background px-4 text-sm text-muted-foreground transition-colors hover:bg-muted sm:h-10 sm:w-auto sm:justify-start sm:gap-3"
+        className="flex h-11 w-64 items-center justify-between rounded-lg border bg-background px-4 text-sm text-muted-foreground transition-colors hover:bg-muted sm:h-10 sm:w-auto sm:justify-start sm:gap-3"
       >
         <div className="flex items-center gap-2">
           <Search className="h-4 w-4" />

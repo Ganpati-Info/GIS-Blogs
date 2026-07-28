@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import Container from "./Container";
+import { Post } from "@/types";
+import { SearchDialog } from "@/components/blog/search";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -12,7 +15,11 @@ const navItems = [
   { label: "Authors", href: "/authors" },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  allPosts: Post[];
+}
+
+export default function Navbar({ allPosts }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -28,27 +35,18 @@ export default function Navbar() {
       <header className="sticky top-0 z-50 border-b bg-background">
         <Container className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary font-bold text-white">
-              G
-            </div>
-
-            <div className="hidden sm:block">
-              <p className="font-bold">GIS Blog</p>
-              <p className="text-xs text-muted-foreground">
-                Ganpati Info Solutions
-              </p>
-            </div>
+            <Image src="/logos/gis_logo.png" alt="GIS Blog Logo" className="" width={128} height={32} />
           </Link>
 
-          <nav className="hidden gap-8 md:flex">
-            {navItems.map((item) => (
-              <Link key={item.label} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <SearchDialog posts={allPosts} />
 
-          <div className="flex items-center gap-2">
+          <div>
+            <Link href="https://ganpatiinfosolutions.com/" className="hidden rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted md:inline-flex">
+              Back to Website
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={() => setOpen(true)}
               className="rounded-lg border p-2 md:hidden"
