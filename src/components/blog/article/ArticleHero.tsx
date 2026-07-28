@@ -46,8 +46,8 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
               alt={post.author.name}
               width={56}
               height={56}
-            className="rounded-full object-center"
-          />
+              className="rounded-full object-center"
+            />
           </Link>
 
           <div className="flex items-center gap-2">

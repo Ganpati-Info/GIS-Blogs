@@ -11,10 +11,15 @@ export type SortType = "newest" | "oldest" | "a-z" | "z-a" | "reading-time";
 interface UsePostsProps {
   posts: Post[];
   initialVisible?: number;
+  initialQuery?: string;
 }
 
-export function usePosts({ posts, initialVisible = 8 }: UsePostsProps) {
-  const [query, setQuery] = useState("");
+export function usePosts({
+  posts,
+  initialVisible = 8,
+  initialQuery = "",
+}: UsePostsProps) {
+  const [query, setQuery] = useState(initialQuery);
 
   const [view, setView] = useState<ViewType>("grid");
 
@@ -27,23 +32,37 @@ export function usePosts({ posts, initialVisible = 8 }: UsePostsProps) {
   const filteredPosts = useMemo(() => {
     let data = [...posts];
 
+    // Category filtering
     if (selectedCategory !== "all") {
       data = data.filter((post) => post.category.slug === selectedCategory);
     }
 
-    if (query.trim()) {
-      const keyword = query.trim().toLowerCase();
+    // Search filtering
+    const keyword = query.trim().toLowerCase();
 
-      data = data.filter(
-        (post) =>
-          post.title.toLowerCase().includes(keyword) ||
-          post.excerpt.toLowerCase().includes(keyword) ||
-          post.category.name.toLowerCase().includes(keyword) ||
-          post.author.name.toLowerCase().includes(keyword) ||
-          post.tags.some((tag) => tag.toLowerCase().includes(keyword)),
-      );
+    if (keyword) {
+      data = data.filter((post) => {
+        const title = post.title?.toLowerCase() ?? "";
+
+        const excerpt = post.excerpt?.toLowerCase() ?? "";
+
+        const category = post.category?.name?.toLowerCase() ?? "";
+
+        const author = post.author?.name?.toLowerCase() ?? "";
+
+        const tags = post.tags?.map((tag) => tag.toLowerCase()) ?? [];
+
+        return (
+          title.includes(keyword) ||
+          excerpt.includes(keyword) ||
+          category.includes(keyword) ||
+          author.includes(keyword) ||
+          tags.some((tag) => tag.includes(keyword))
+        );
+      });
     }
 
+    // Sorting
     switch (sort) {
       case "oldest":
         data.sort(
@@ -72,11 +91,16 @@ export function usePosts({ posts, initialVisible = 8 }: UsePostsProps) {
             new Date(b.publishedAt).getTime() -
             new Date(a.publishedAt).getTime(),
         );
+        break;
     }
 
     return data;
   }, [posts, query, selectedCategory, sort]);
 
+  // Reset Load More whenever filtering changes
+  useEffect(() => {
+    setVisiblePosts(initialVisible);
+  }, [query, selectedCategory, sort, initialVisible]);
 
   return {
     query,

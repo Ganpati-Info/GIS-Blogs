@@ -14,21 +14,26 @@ export default function SearchFooter({
   totalResults,
   onClose,
 }: SearchFooterProps) {
+  const trimmedQuery = query.trim();
+
+  if (!trimmedQuery || totalResults === 0) {
+    return null;
+  }
+
   return (
     <div className="sticky bottom-0 border-t bg-background p-2">
       <Link
-        href={`/posts?q=${encodeURIComponent(query)}`}
+        href={`/posts?q=${encodeURIComponent(trimmedQuery)}`}
         onClick={onClose}
         className="flex items-center justify-between rounded-lg px-3 py-3 transition hover:bg-muted"
       >
         <div>
           <p className="font-medium">
-            View all {totalResults} result
-            {totalResults !== 1 && "s"}
+            {totalResults} {totalResults === 1 ? "result" : "results"} found
           </p>
 
           <p className="text-sm text-muted-foreground">
-            Browse every matching article
+            View all results for &quot;{trimmedQuery}&quot;
           </p>
         </div>
 

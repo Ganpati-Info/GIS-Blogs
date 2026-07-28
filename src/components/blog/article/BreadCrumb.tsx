@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
+import { Home } from "lucide-react";
 
 import { Post } from "@/types";
 
@@ -22,20 +22,7 @@ export default function Breadcrumb({ post }: BreadcrumbProps) {
             Home
           </Link>
         </li>
-
-        <ChevronRight className="h-4 w-4 text-muted-foreground" />
-
-        <li>
-          <Link
-            href={`/${post.category.slug}`}
-            className="text-muted-foreground transition-colors hover:text-primary"
-          >
-            {post.category.name}
-          </Link>
-        </li>
-
-        <ChevronRight className="h-4 w-4 text-muted-foreground" />
-
+        <li className="text-muted-foreground">{'>'}</li>
         <li
           className="hidden max-w-xs truncate font-medium text-foreground sm:block sm:max-w-md"
           aria-current="page"

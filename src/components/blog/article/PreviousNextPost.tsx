@@ -16,7 +16,7 @@ export default function PreviousNextPost({
 }: PreviousNextPostProps) {
   const renderCard = (post: Post, direction: "previous" | "next") => (
     <Link
-      href={`/${post.category.slug}/${post.slug}`}
+      href={`/${post.slug}`}
       className="group rounded-2xl border bg-card p-6 transition-all hover:border-primary hover:shadow-lg"
     >
       <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
