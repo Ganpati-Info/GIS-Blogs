@@ -4,6 +4,7 @@ import {
   POSTS_QUERY,
   POST_QUERY,
   POSTS_BY_CATEGORY_QUERY,
+  POPULAR_POSTS_QUERY,
 } from "@/lib/sanity/queries";
 
 import { mapPost } from "@/lib/sanity/mappers/post.mapper";
@@ -101,4 +102,28 @@ export async function getRelatedPosts(
         post.category.slug === currentPost.category.slug,
     )
     .slice(0, limit);
+}
+
+export async function getPopularPosts(limit = 5): Promise<Post[]> {
+  if (!hasSanityConfig) {
+    return fallbackPosts.slice(0, limit);
+  }
+
+  const posts = client
+    .fetch(
+      POPULAR_POSTS_QUERY,
+      {},
+      {
+        cache: "no-store",
+      },
+    )
+    .catch(() => fallbackPosts);
+
+  const resolvedPosts = await withTimeout(posts, fallbackPosts);
+
+  const mappedPosts = Array.isArray(resolvedPosts)
+    ? resolvedPosts.map(mapPost)
+    : fallbackPosts;
+
+  return mappedPosts.slice(0, limit);
 }
