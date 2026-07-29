@@ -48,8 +48,8 @@ export function mapPost(post: any): Post {
 
     readingTime: calculateReadingTime(post.body ?? []),
 
-    featured: post.featured,
+    featured: post.featured ?? false,
 
-    popular: false,
+    popular: post.isPopular ?? false,
   };
 }

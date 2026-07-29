@@ -236,3 +236,13 @@ export const POSTS_BY_AUTHOR_QUERY = groq`
     ${POST_FIELDS}
   }
 `;
+export const POPULAR_POSTS_QUERY = groq`
+  *[
+    _type == "post" &&
+    isPopular == true &&
+    !(_id in path("drafts.**"))
+  ]
+  | order(coalesce(publishedAt, _createdAt) desc)[0...5]{
+    ${POST_FIELDS}
+  }
+`;
