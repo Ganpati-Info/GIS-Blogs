@@ -19,16 +19,7 @@ export function mapPost(post: any): Post {
 
     coverImage: post.coverImage?.asset?.url ?? "",
 
-    category: post.category
-      ? mapCategory(post.category)
-      : {
-          id: "",
-          name: "",
-          slug: "",
-          description: "",
-          color: "#25499F",
-          icon: "",
-        },
+    categories: post.categories?.map(mapCategory) ?? [],
 
     author: mapAuthor(post.author),
 

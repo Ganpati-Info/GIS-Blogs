@@ -64,7 +64,9 @@ export async function getCategory(slug: string) {
 
 export async function getPostsByCategory(slug: string) {
   if (!hasSanityConfig) {
-    return fallbackPosts.filter((post) => post.category.slug === slug);
+    return fallbackPosts.filter((post) =>
+      post.categories.some((category) => category.slug === slug),
+    );
   }
 
   const posts = client
@@ -77,5 +79,5 @@ export async function getPostsByCategory(slug: string) {
 
   return Array.isArray(resolvedPosts)
     ? resolvedPosts.map(mapPost)
-    : fallbackPosts.filter((post) => post.category.slug === slug);
+    : fallbackPosts.filter((post) => post.categories.some((category) => category.slug === slug));
 }

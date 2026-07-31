@@ -73,7 +73,9 @@ export async function getPostsByCategory(
   categorySlug: string,
 ): Promise<Post[]> {
   if (!hasSanityConfig) {
-    return fallbackPosts.filter((post) => post.category.slug === categorySlug);
+    return fallbackPosts.filter((post) =>
+      post.categories.some((category) => category.slug === categorySlug),
+    );
   }
 
   const posts = client
@@ -86,7 +88,9 @@ export async function getPostsByCategory(
 
   return Array.isArray(resolvedPosts)
     ? resolvedPosts.map(mapPost)
-    : fallbackPosts.filter((post) => post.category.slug === categorySlug);
+    : fallbackPosts.filter((post) =>
+        post.categories.some((category) => category.slug === categorySlug),
+      );
 }
 
 export async function getRelatedPosts(
@@ -99,7 +103,11 @@ export async function getRelatedPosts(
     .filter(
       (post) =>
         post.id !== currentPost.id &&
-        post.category.slug === currentPost.category.slug,
+        post.categories.some((category) =>
+          currentPost.categories.some(
+            (currentCategory) => currentCategory.slug === category.slug,
+          ),
+        ),
     )
     .slice(0, limit);
 }

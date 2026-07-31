@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Clock } from "lucide-react";
+import CategoryBadges from "@/components/blog/posts/CategoryBadges";
 
 import { Post } from "@/types";
 
@@ -46,14 +46,13 @@ export default function SearchResultCard({
       />
 
       <div className="min-w-0 flex-1">
-        <p
-          className="mb-1 text-xs font-semibold"
-          style={{
-            color: post.category.color,
-          }}
-        >
-          {post.category.name}
-        </p>
+        <div className="mb-2">
+          <CategoryBadges
+            categories={post.categories}
+            maxVisible={1}
+            variant="soft"
+          />
+        </div>
 
         <h3 className="text-sm font-semibold transition-colors group-hover:text-primary">
           {highlight(post.title, query)}

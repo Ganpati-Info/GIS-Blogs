@@ -52,14 +52,14 @@ const POST_FIELDS = groq`
     social
   },
 
-  category->{
-    _id,
-    title,
-    slug,
-    description,
-    color,
-    icon
-  }
+  categories[]->{
+  _id,
+  title,
+  slug,
+  description,
+  color,
+  icon
+}
 `;
 export const POSTS_QUERY = groq`
   *[_type == "post"] | order(publishedAt desc) {
@@ -76,9 +76,9 @@ export const POST_QUERY = groq`
 `;
 export const POSTS_BY_CATEGORY_QUERY = groq`
   *[
-    _type == "post" &&
-    category->slug.current == $categorySlug
-  ] | order(publishedAt desc) {
+  _type == "post" &&
+  $categorySlug in categories[]->slug.current
+] | order(publishedAt desc) {
     ${POST_FIELDS}
   }
 `;
@@ -126,9 +126,16 @@ export const CATEGORY_QUERY = groq`
       },
 
       author->{
-        name,
-        slug
-      }
+  name,
+  slug
+},
+
+categories[]->{
+  title,
+  slug,
+  color,
+  icon
+}
     }
   }
 `;
@@ -219,12 +226,12 @@ export const AUTHOR_QUERY = groq`
         alt
       },
 
-      category->{
-        title,
-        slug,
-        color,
-        icon
-      }
+      categories[]->{
+  title,
+  slug,
+  color,
+  icon
+}
     }
   }
 `;

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, FolderOpen } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 import { Category } from "@/types";
 

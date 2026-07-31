@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Clock } from "lucide-react";
-
+import CategoryBadges from "@/components/blog/posts/CategoryBadges";
 import { Post } from "@/types";
 
 interface GridPostCardProps {
@@ -25,14 +25,7 @@ export default function GridPostCard({ post }: GridPostCardProps) {
           />
 
           <div className="absolute left-3 top-3 sm:left-4 sm:top-4">
-            <span
-              className="rounded-full px-2.5 py-1 text-[11px] font-semibold text-white sm:px-3 sm:text-xs"
-              style={{
-                backgroundColor: post.category.color,
-              }}
-            >
-              {post.category.name}
-            </span>
+            <CategoryBadges categories={post.categories} maxVisible={1} />
           </div>
         </div>
       </Link>

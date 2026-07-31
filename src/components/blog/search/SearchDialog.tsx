@@ -57,16 +57,16 @@ export default function SearchDialog({ posts }: SearchDialogProps) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex h-11 w-64 items-center justify-between rounded-lg border bg-background px-4 text-sm text-muted-foreground transition-colors hover:bg-muted sm:h-10 sm:w-auto sm:justify-start sm:gap-3"
+        className="flex h-11 md:w-lg! items-center justify-between rounded-lg border bg-background px-4 text-sm text-muted-foreground transition-colors hover:bg-muted sm:h-10 sm:w-auto sm:justify-start sm:gap-3"
       >
         <div className="flex items-center gap-2">
           <Search className="h-4 w-4" />
           <span>Search articles...</span>
         </div>
 
-        <kbd className="hidden rounded-md border bg-muted px-2 py-1 text-xs sm:inline-flex">
+        {/* <kbd className="hidden rounded-md border bg-muted px-2 py-1 text-xs sm:inline-flex">
           Ctrl K
-        </kbd>
+        </kbd> */}
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>

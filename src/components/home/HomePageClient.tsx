@@ -14,7 +14,7 @@ import Newsletter from "@/components/common/Newsletter";
 import PopularPosts from "@/components/home/PopularPosts";
 
 import Container from "@/components/layout/Container";
-import { SearchDialog } from "@/components/blog/search";
+// import { SearchDialog } from "@/components/blog/search";
 
 import { Category, Post } from "@/types";
 
@@ -40,7 +40,9 @@ export default function HomePageClient({
       return allPosts;
     }
 
-    return allPosts.filter((post) => post.category.slug === selectedCategory);
+    return allPosts.filter((post) =>
+      post.categories.some((category) => category.slug === selectedCategory),
+    );
   }, [selectedCategory, allPosts]);
 
   const sectionTitle =

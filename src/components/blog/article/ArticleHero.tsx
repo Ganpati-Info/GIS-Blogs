@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Clock } from "lucide-react";
-
+import CategoryBadges from "@/components/blog/posts/CategoryBadges";
 import { formatDate } from "@/lib/date";
 import { Post } from "@/types";
 
@@ -15,16 +15,7 @@ export default function ArticleHero({ post }: ArticleHeroProps) {
   return (
     <header className="pt-4">
       {/* Category */}
-      <Link
-        href={`/${post.category.slug}`}
-        className="inline-flex rounded-full px-4 py-1.5 text-sm font-semibold transition-opacity hover:opacity-80"
-        style={{
-          backgroundColor: `${post.category.color}15`,
-          color: post.category.color,
-        }}
-      >
-        {post.category.name}
-      </Link>
+      <CategoryBadges categories={post.categories} showAll variant="solid" />
 
       {/* Title */}
       <h1 className="mt-8 max-w-4xl text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl xl:text-6xl text-center justify-center mx-auto">
