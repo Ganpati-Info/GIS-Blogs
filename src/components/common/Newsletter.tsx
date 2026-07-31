@@ -5,11 +5,8 @@ import { Mail, Loader2, CheckCircle } from "lucide-react";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
-
   const [loading, setLoading] = useState(false);
-
   const [success, setSuccess] = useState(false);
-
   const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -55,29 +52,31 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="rounded-lg border bg-card px-6 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
+    <section className="overflow-hidden rounded-2xl border bg-card px-5 py-8 shadow-sm sm:px-8 sm:py-10 lg:px-12 lg:py-14">
       <div className="mx-auto max-w-3xl text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-          <Mail className="h-7 w-7 text-primary" />
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 sm:h-16 sm:w-16">
+          <Mail className="h-7 w-7 text-primary sm:h-8 sm:w-8" />
         </div>
 
-        <h2 className="mt-6 text-2xl font-bold sm:text-3xl">Stay Updated</h2>
+        <h2 className="mt-6 text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl">
+          Stay Updated
+        </h2>
 
-        <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">
+        <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
           Get the latest insights on technology, software development, AI, cloud
           computing, cybersecurity, and digital transformation delivered
           directly to your inbox.
         </p>
 
         {success ? (
-          <div className="mt-8 rounded-lg border border-green-200 bg-green-50 p-6">
-            <CheckCircle className="mx-auto h-10 w-10 text-green-600" />
+          <div className="mt-8 rounded-xl border border-green-200 bg-green-50 p-6 sm:p-8">
+            <CheckCircle className="mx-auto h-10 w-10 text-green-600 sm:h-12 sm:w-12" />
 
-            <h3 className="mt-4 text-lg font-semibold text-green-700">
+            <h3 className="mt-4 text-lg font-semibold text-green-700 sm:text-xl">
               Thank you for subscribing!
             </h3>
 
-            <p className="mt-2 text-sm text-green-700">
+            <p className="mt-2 text-sm text-green-700 sm:text-base">
               You're now subscribed to our newsletter.
             </p>
           </div>
@@ -92,13 +91,13 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="h-12 flex-1 rounded-lg border bg-background px-4 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+                className="h-12 w-full rounded-xl border bg-background px-4 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20 sm:h-14 sm:text-base"
               />
 
               <button
                 type="submit"
                 disabled={loading}
-                className="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 disabled:opacity-60"
+                className="flex h-12 w-full shrink-0 items-center justify-center rounded-xl bg-primary px-6 text-sm font-medium text-primary-foreground transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-60 sm:h-14 sm:w-auto sm:min-w-[170px] sm:px-8 sm:text-base"
               >
                 {loading ? (
                   <>
@@ -111,9 +110,11 @@ export default function Newsletter() {
               </button>
             </form>
 
-            {error && <p className="mt-3 text-sm text-red-500">{error}</p>}
+            {error && (
+              <p className="mt-3 text-sm font-medium text-red-500">{error}</p>
+            )}
 
-            <p className="mt-4 text-xs text-muted-foreground sm:text-sm">
+            <p className="mt-5 text-xs leading-6 text-muted-foreground sm:text-sm">
               No spam. Unsubscribe anytime.
             </p>
           </>

@@ -77,7 +77,7 @@ export const fallbackPosts: Post[] = [
     content: [],
     coverImage:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1600&q=80",
-    category: aiCategory,
+    categories: [aiCategory],
     author: priya,
     tags: [
       "Artificial Intelligence",
@@ -106,7 +106,7 @@ export const fallbackPosts: Post[] = [
     content: [],
     coverImage:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600&q=80",
-    category: webCategory,
+    categories: [webCategory],
     author: souvik,
     tags: ["Next.js", "React", "TypeScript", "Performance"],
     seo: {
@@ -129,7 +129,7 @@ export const fallbackPosts: Post[] = [
     content: [],
     coverImage:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600&q=80",
-    category: cloudCategory,
+    categories: [cloudCategory],
     author: souvik,
     tags: ["Cloud", "DevOps", "AWS", "Infrastructure"],
     seo: {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Clock3 } from "lucide-react";
-
+import CategoryBadges from "@/components/blog/posts/CategoryBadges";
 import { Post } from "@/types";
 
 interface FeaturedPostProps {
@@ -28,9 +28,13 @@ export default function FeaturedPost({ post }: FeaturedPostProps) {
 
         {/* Content */}
         <div className="order-2 flex flex-col justify-center xl:order-1">
-          <span className="mb-4 inline-flex w-fit rounded-lg bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-            Featured
-          </span>
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            <span className="inline-flex rounded-lg bg-primary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+              Featured
+            </span>
+
+            <CategoryBadges categories={post.categories} showAll />
+          </div>
 
           <Link href={`/${post.slug}`} className="group">
             <h1 className="text-2xl font-bold leading-tight transition-colors group-hover:text-primary md:text-3xl xl:text-4xl">

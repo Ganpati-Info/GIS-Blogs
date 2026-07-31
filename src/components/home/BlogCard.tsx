@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Clock3 } from "lucide-react";
-
+import CategoryBadges from "@/components/blog/posts/CategoryBadges";
 import { Post } from "@/types";
 
 interface BlogCardProps {
@@ -24,16 +24,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       </Link>
 
       <div className="p-6">
-        <Link href={`/${post.category.slug}`}>
-          <span
-            className="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white"
-            style={{
-              backgroundColor: post.category.color,
-            }}
-          >
-            {post.category.name}
-          </span>
-        </Link>
+        <CategoryBadges categories={post.categories} maxVisible={1} size="sm" />
 
         <Link href={`/${post.slug}`}>
           <h3 className="mt-4 line-clamp-2 text-2xl font-bold transition-colors group-hover:text-primary">

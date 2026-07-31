@@ -34,14 +34,24 @@ export default function Navbar({ allPosts }: NavbarProps) {
     <>
       <header className="sticky top-0 z-50 border-b bg-background">
         <Container className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/logos/gis_logo.png" alt="GIS Blog Logo" className="" width={128} height={32} />
+          <Link href="/" className="flex flex-shrink-0 items-center">
+            <Image
+              src="/logos/gis_logo.png"
+              alt="GIS Blog Logo"
+              width={180}
+              height={45}
+              priority
+              className="h-8 w-auto sm:h-9 md:h-10 lg:h-11"
+            />
           </Link>
 
           <SearchDialog posts={allPosts} />
 
           <div>
-            <Link href="https://ganpatiinfosolutions.com/" className="hidden rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted md:inline-flex">
+            <Link
+              href="https://ganpatiinfosolutions.com/"
+              className="hidden rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted md:inline-flex"
+            >
               Back to Website
             </Link>
           </div>

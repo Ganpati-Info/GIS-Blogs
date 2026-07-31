@@ -9,10 +9,15 @@ export async function getRelatedPosts(post: Post, limit = 3) {
   const posts = await getPosts();
 
   return posts
-    .filter(
-      (item: Post) =>
-        item.category.slug === post.category.slug && item.id !== post.id,
-    )
+    .filter((item: Post) => {
+      if (item.id === post.id) return false;
+
+      return item.categories.some((category) =>
+        post.categories.some(
+          (currentCategory) => currentCategory.slug === category.slug,
+        ),
+      );
+    })
     .slice(0, limit);
 }
 

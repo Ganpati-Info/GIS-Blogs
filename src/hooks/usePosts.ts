@@ -34,7 +34,9 @@ export function usePosts({
 
     // Category filtering
     if (selectedCategory !== "all") {
-      data = data.filter((post) => post.category.slug === selectedCategory);
+      data = data.filter((post) =>
+        post.categories.some((category) => category.slug === selectedCategory),
+      );
     }
 
     // Search filtering
@@ -46,7 +48,8 @@ export function usePosts({
 
         const excerpt = post.excerpt?.toLowerCase() ?? "";
 
-        const category = post.category?.name?.toLowerCase() ?? "";
+        const categories =
+          post.categories?.map((category) => category.name.toLowerCase()) ?? [];
 
         const author = post.author?.name?.toLowerCase() ?? "";
 
@@ -55,7 +58,7 @@ export function usePosts({
         return (
           title.includes(keyword) ||
           excerpt.includes(keyword) ||
-          category.includes(keyword) ||
+          categories.some((category) => category.includes(keyword)) ||
           author.includes(keyword) ||
           tags.some((tag) => tag.includes(keyword))
         );

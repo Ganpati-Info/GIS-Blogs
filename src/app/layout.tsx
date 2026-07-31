@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-
+import { TooltipProvider } from "@/components/ui/tooltip";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { getPosts } from "@/services/post.service";
@@ -88,7 +88,9 @@ export default async function RootLayout({
         <Navbar allPosts={posts}/>
 
         <main id="main-content" className="flex-1">
-          {children}
+          <TooltipProvider>
+            {children}
+          </TooltipProvider>
         </main>
 
         <Footer />

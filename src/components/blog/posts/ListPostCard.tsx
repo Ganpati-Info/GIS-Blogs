@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CalendarDays, Clock, ArrowRight } from "lucide-react";
-
+import CategoryBadges from "@/components/blog/posts/CategoryBadges";
 import { Post } from "@/types";
 
 interface ListPostCardProps {
@@ -27,14 +27,7 @@ export default function ListPostCard({ post }: ListPostCardProps) {
 
         <div className="flex flex-1 flex-col p-4 sm:p-5 lg:p-6">
           <div className="mb-4 flex flex-wrap items-center gap-2 sm:gap-3">
-            <span
-              className="rounded-full px-2.5 py-1 text-[11px] font-semibold text-white sm:px-3 sm:text-xs"
-              style={{
-                backgroundColor: post.category.color,
-              }}
-            >
-              {post.category.name}
-            </span>
+            <CategoryBadges categories={post.categories} maxVisible={1} />
 
             <span className="flex items-center gap-1 text-xs text-muted-foreground sm:text-sm">
               <CalendarDays className="h-4 w-4 shrink-0" />

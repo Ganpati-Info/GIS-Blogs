@@ -32,7 +32,8 @@ export function useSearch({ posts, delay = 250, limit = 5 }: UseSearchOptions) {
     return posts.filter((post) => {
       const title = post.title?.toLowerCase() ?? "";
       const excerpt = post.excerpt?.toLowerCase() ?? "";
-      const category = post.category?.name?.toLowerCase() ?? "";
+      const categories =
+        post.categories?.map((category) => category.name.toLowerCase()) ?? [];
       const author = post.author?.name?.toLowerCase() ?? "";
 
       const tags = post.tags?.map((tag) => tag.toLowerCase()) ?? [];
@@ -40,7 +41,7 @@ export function useSearch({ posts, delay = 250, limit = 5 }: UseSearchOptions) {
       return (
         title.includes(keyword) ||
         excerpt.includes(keyword) ||
-        category.includes(keyword) ||
+        categories.some((category) => category.includes(keyword)) ||
         author.includes(keyword) ||
         tags.some((tag) => tag.includes(keyword))
       );

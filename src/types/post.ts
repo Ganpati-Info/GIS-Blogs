@@ -17,7 +17,7 @@ export interface Post {
 
   coverImage: string;
 
-  category: Category;
+  categories: Category[];
 
   author: Author;
 

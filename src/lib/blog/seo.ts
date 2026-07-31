@@ -46,7 +46,7 @@ export function generateArticleSchema(post: Post, siteUrl: string) {
 
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${siteUrl}/${post.category.slug}/${post.slug}`,
+      "@id": `${siteUrl}/${post.slug}`,
     },
   };
 }
