@@ -3,9 +3,7 @@ import "./globals.css";
 
 import { Inter } from "next/font/google";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import { getPosts } from "@/services/post.service";
+
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -30,7 +28,7 @@ export const metadata: Metadata = {
     "Digital Transformation",
     "Ganpati Info Solutions",
     "blogs",
-    "technical blogs"
+    "technical blogs",
   ],
 
   authors: [
@@ -74,26 +72,17 @@ export const viewport: Viewport = {
   themeColor: "#25499F",
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const posts = await getPosts();
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} flex min-h-screen flex-col bg-background text-foreground antialiased`}
       >
-        <Navbar allPosts={posts}/>
-
-        <main id="main-content" className="flex-1">
-          <TooltipProvider>
-            {children}
-          </TooltipProvider>
-        </main>
-
-        <Footer />
+        <TooltipProvider>{children}</TooltipProvider>
       </body>
     </html>
   );
