@@ -115,9 +115,8 @@ export default function HomePageClient({
 
         {/* Popular Posts & Categories */}
         <section className="mt-16 lg:mt-20">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <PopularPosts posts={popularPosts} />
-
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             <ExploreCategories
               categories={categories}
               articleCounts={articleCounts}
